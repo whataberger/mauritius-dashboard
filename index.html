@@ -43,16 +43,44 @@
       min-height: 100dvh;
     }
 
+    /* ─── OFFLINE TOGGLE ────────────────────────────────── */
+    .offline-toggle {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 200;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.75);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.18s;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .offline-toggle.active {
+      background: rgba(46,125,168,0.85);
+      border-color: var(--ocean-mid);
+      color: white;
+    }
+
     /* ─── HERO ──────────────────────────────────────────── */
     .hero {
       background: linear-gradient(160deg, #071e2c 0%, var(--ocean-deep) 30%, var(--ocean) 65%, #1e6b8a 100%);
-      min-height: 88dvh;
+      min-height: 60vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 3rem 2rem 6rem;
+      padding: 2rem 2rem 2rem;
       position: relative;
       overflow: hidden;
     }
@@ -100,7 +128,7 @@
       text-transform: uppercase;
       padding: 0.3rem 0.9rem;
       border-radius: 100px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .hero-eyebrow {
@@ -129,14 +157,14 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.50);
-      margin-bottom: 2.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-dates {
       display: flex;
       align-items: center;
       gap: 1.25rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-date-block { text-align: center; }
@@ -179,26 +207,118 @@
       font-size: 1rem;
       font-style: italic;
       color: var(--sand-light);
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    .hero-countdown {
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+    /* ─── COUNTDOWN BOXES ───────────────────────────────── */
+    .countdown-boxes {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 0.5rem;
     }
 
-    .hero-countdown span {
-      color: rgba(255,255,255,0.65);
+    .cd-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 0.7rem 0.9rem 0.55rem;
+      min-width: 62px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .cd-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
       font-weight: 500;
+      color: #fff;
+      line-height: 1;
+      display: block;
+    }
+
+    .cd-lbl {
+      font-size: 0.52rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    .countdown-msg {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+    }
+
+    .countdown-msg span { color: rgba(255,255,255,0.8); font-weight: 500; }
+
+    /* ─── CLOCK BAR ─────────────────────────────────────── */
+    .clock-bar {
+      background: var(--ocean-deep);
+      color: white;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      height: 52px;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .clock-city {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 0 0.5rem;
+      max-width: 180px;
+      position: relative;
+    }
+
+    .clock-city + .clock-city::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .clock-city-name {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      line-height: 1;
+    }
+
+    .clock-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .clock-tz {
+      font-size: 0.52rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
     }
 
     /* ─── NAV ────────────────────────────────────────────── */
     .nav {
       position: sticky;
-      top: 0;
-      z-index: 100;
+      top: 52px;
+      z-index: 98;
       background: rgba(254,252,248,0.97);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -691,7 +811,7 @@
       gap: 0.5rem;
     }
 
-    /* Confirmed reservation badge (green) */
+    /* Confirmed reservation badge */
     .confirmed-badge {
       display: inline-flex;
       align-items: center;
@@ -721,7 +841,7 @@
 
     .confirmed-row strong { font-weight: 600; }
 
-    /* Unconfirmed / to-do badge (amber) */
+    /* Unconfirmed / to-do badge */
     .todo-badge {
       display: inline-flex;
       align-items: center;
@@ -823,6 +943,54 @@
     .dt-spa      { --day-color:#9E4B6A; --day-bg:#F8ECF0; }
     .dt-depart   { --day-color:#6B6460; --day-bg:#EEEBE8; }
     .dt-london   { --day-color:#5B3F8A; --day-bg:#F0EBF9; }
+
+    /* ─── DAY NOTES ──────────────────────────────────────── */
+    .day-note-wrap {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--bg-alt);
+    }
+
+    .day-note-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .note-status {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .day-note-input {
+      width: 100%;
+      min-height: 56px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 0.55rem 0.75rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text);
+      line-height: 1.5;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .day-note-input::placeholder {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .day-note-input:focus { border-color: var(--ocean-mid); }
 
     /* ─── PACKING ────────────────────────────────────────── */
     .pack-progress {
@@ -1223,6 +1391,346 @@
 
     .bdg-total-amt .bdg-amt-val.actual { color: var(--coral); }
 
+    /* ─── CURRENCY WIDGET ────────────────────────────────── */
+    .currency-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 8px var(--shadow);
+    }
+
+    .currency-title {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sand-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .currency-rates {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .currency-rate-item { flex: 1; min-width: 120px; }
+
+    .currency-rate-lbl {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .currency-rate-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--ocean-deep);
+      font-weight: 500;
+    }
+
+    .currency-updated {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* ─── WEATHER WIDGET ─────────────────────────────────── */
+    .weather-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 8px var(--shadow);
+    }
+
+    .weather-title {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sand-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .weather-days {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+
+    .weather-day {
+      flex: 1;
+      text-align: center;
+      background: var(--bg-alt);
+      border-radius: var(--r-sm);
+      padding: 0.6rem 0.3rem;
+    }
+
+    .weather-day-name {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .weather-day-icon { font-size: 1.3rem; line-height: 1; margin-bottom: 0.25rem; }
+
+    .weather-day-hi {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--ocean-deep);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .weather-day-lo {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+
+    .weather-updated {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      font-style: italic;
+    }
+
+    /* ─── RESORT SECTION ─────────────────────────────────── */
+    .resort-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 8px var(--shadow);
+    }
+
+    .resort-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--ocean-deep);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .resort-venue-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .resort-venue {
+      background: var(--bg-alt);
+      border-radius: var(--r-sm);
+      padding: 0.7rem 0.875rem;
+      border: 1px solid var(--border);
+    }
+
+    .resort-venue-name {
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--ocean-deep);
+      margin-bottom: 0.18rem;
+    }
+
+    .resort-venue-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .resort-logistics-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .resort-logistics-lbl {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sand-dark);
+      min-width: 80px;
+      padding-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .resort-logistics-val { color: var(--text-mid); line-height: 1.45; }
+
+    .resort-contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--bg-alt);
+      font-size: 0.82rem;
+    }
+
+    .resort-contact-row:last-child { border-bottom: none; }
+
+    .resort-contact-lbl {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      flex: 1;
+    }
+
+    .resort-contact-tel {
+      color: var(--ocean);
+      text-decoration: none;
+      font-weight: 500;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+    }
+
+    .resort-tips-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .resort-tips-list li {
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--bg-alt);
+      line-height: 1.45;
+    }
+
+    .resort-tips-list li:last-child { border-bottom: none; }
+
+    .resort-tips-list li::before {
+      content: '·';
+      color: var(--sand);
+      font-size: 1.2rem;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    /* ─── JOURNAL ────────────────────────────────────────── */
+    .journal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.875rem;
+    }
+
+    .journal-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 1px 8px var(--shadow);
+    }
+
+    .journal-card-date {
+      padding: 0.5rem 0.75rem;
+      background: var(--ocean-deep);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .journal-photo-area {
+      aspect-ratio: 4/3;
+      background: var(--bg-alt);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .journal-photo-area img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .journal-upload-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--text-muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .journal-upload-icon { font-size: 1.6rem; }
+
+    .journal-upload-btn.hidden { display: none; }
+
+    .journal-uploading {
+      font-size: 0.7rem;
+      color: var(--ocean);
+      text-align: center;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.8);
+      display: none;
+    }
+
+    .journal-caption {
+      width: 100%;
+      background: var(--white);
+      border: none;
+      border-top: 1px solid var(--border);
+      padding: 0.5rem 0.75rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--text);
+      outline: none;
+      resize: none;
+      min-height: 40px;
+    }
+
+    .journal-caption::placeholder {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ─── TOAST ──────────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--ocean-deep);
+      color: white;
+      font-size: 0.78rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 100px;
+      z-index: 300;
+      transition: transform 0.3s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
     /* ─── UTILITIES ──────────────────────────────────────── */
     .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
 
@@ -1230,10 +1738,16 @@
       .wish-grid { grid-template-columns: 1fr; }
       .hero-title { font-size: 2.4rem; }
       .bdg-amounts { gap: 0.75rem; }
+      .journal-grid { grid-template-columns: 1fr; }
+      .cd-box { min-width: 52px; padding: 0.6rem 0.6rem 0.45rem; }
+      .cd-num { font-size: 1.65rem; }
     }
   </style>
 </head>
 <body>
+
+<!-- ═══════════════════════════════════ OFFLINE TOGGLE -->
+<button class="offline-toggle" id="offlineToggle" onclick="toggleOffline()">⬢ Offline</button>
 
 <!-- ═══════════════════════════════════════════════════ HERO -->
 <div class="hero">
@@ -1264,12 +1778,38 @@
   </div>
 
   <div class="hero-pill">4 nights in paradise · London bookends</div>
-  <div class="hero-countdown" id="countdown">Loading…</div>
+
+  <div class="countdown-boxes" id="countdownBoxes">
+    <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Days</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Hours</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Min</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Sec</span></div>
+  </div>
+  <div class="countdown-msg" id="countdownMsg"></div>
 
   <div class="hero-wave">
     <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#FEFCF8"/>
     </svg>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ CLOCK BAR -->
+<div class="clock-bar" id="clockBar">
+  <div class="clock-city">
+    <div class="clock-city-name">Austin</div>
+    <div class="clock-time" id="ck-austin">--:-- --</div>
+    <div class="clock-tz">CDT · UTC-5</div>
+  </div>
+  <div class="clock-city">
+    <div class="clock-city-name">London</div>
+    <div class="clock-time" id="ck-london">--:-- --</div>
+    <div class="clock-tz">BST · UTC+1</div>
+  </div>
+  <div class="clock-city">
+    <div class="clock-city-name">Mauritius</div>
+    <div class="clock-time" id="ck-mauritius">--:-- --</div>
+    <div class="clock-tz">MUT · UTC+4</div>
   </div>
 </div>
 
@@ -1291,10 +1831,16 @@
     <button class="nav-tab" data-tab="budget" onclick="showTab('budget')">
       <span class="ti">💰</span>Budget
     </button>
+    <button class="nav-tab" data-tab="journal" onclick="showTab('journal')">
+      <span class="ti">📸</span>Journal
+    </button>
+    <button class="nav-tab" data-tab="resort" onclick="showTab('resort')">
+      <span class="ti">🏝</span>Resort
+    </button>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════════════ FLIGHTS -->
+<!-- ═══════════════════════════════════════════ FLIGHTS -->
 <section id="s-flights" class="section active">
   <div class="section-header">
     <div class="section-eyebrow">Getting There</div>
@@ -1505,7 +2051,7 @@
     </div>
     <div class="transfer-row">
       <div class="transfer-lbl">Resort Tel</div>
-      <div class="transfer-val">+230 401 1888</div>
+      <div class="transfer-val">+230 401 1800</div>
     </div>
     <div class="note-box">
       💡 Roundtrip airport transfers are included by Flexera. The resort is on the east coast — ~1 hour from the airport through the north or south route. Grab Mauritian Rupees at the airport ATM. Hotels and larger restaurants take cards.
@@ -1538,10 +2084,10 @@
   <div class="section-header">
     <div class="section-eyebrow">Day by Day</div>
     <h2 class="section-title">The Itinerary</h2>
-    <p class="section-sub">May 14–24, 2026 · Tap any day to expand &nbsp;·&nbsp; <span style="color:#2F6B2D;font-weight:500;">✦ Green = Flexera hosted</span></p>
+    <p class="section-sub">May 14–24, 2026 · Tap any day to expand &nbsp;·&nbsp; <span style="color:#2F6B2D;font-weight:500;">✦ Green = Flexera hosted</span> &nbsp;·&nbsp; Notes sync with Gabby</p>
   </div>
 
-  <!-- Day 1 -->
+  <!-- Day 1 — May 14 -->
   <div class="day-card dt-travel">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">14</span></div>
@@ -1574,10 +2120,14 @@
           <div class="time-desc">Overnight transatlantic flight. Arrive London Heathrow T5 tomorrow morning at 9:15 AM (Friday May 15). Noise-canceling headphones, melatonin, and a good movie.</div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may14"></span></div>
+        <textarea class="day-note-input" data-day="may14" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 2 -->
+  <!-- Day 2 — May 15 -->
   <div class="day-card dt-london">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">15</span></div>
@@ -1649,10 +2199,14 @@
           </div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may15"></span></div>
+        <textarea class="day-note-input" data-day="may15" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 3 -->
+  <!-- Day 3 — May 16 -->
   <div class="day-card dt-london">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">16</span></div>
@@ -1696,10 +2250,14 @@
           </div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may16"></span></div>
+        <textarea class="day-note-input" data-day="may16" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 4 -->
+  <!-- Day 4 — May 17 -->
   <div class="day-card dt-travel">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">17</span></div>
@@ -1735,10 +2293,14 @@
           <div class="time-desc">11h 50m to paradise. Arrive Mauritius Monday 6:50 AM. Flat-beds, time zones converging. Sleep as much as possible.</div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may17"></span></div>
+        <textarea class="day-note-input" data-day="may17" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 5 -->
+  <!-- Day 5 — May 18 -->
   <div class="day-card dt-arrival">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">18</span></div>
@@ -1776,10 +2338,14 @@
           <div class="flexera-row">✦ Flexera President's Club event — included</div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may18"></span></div>
+        <textarea class="day-note-input" data-day="may18" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 6 -->
+  <!-- Day 6 — May 19 -->
   <div class="day-card dt-beach">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">19</span></div>
@@ -1820,10 +2386,14 @@
           </div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may19"></span></div>
+        <textarea class="day-note-input" data-day="may19" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 7 -->
+  <!-- Day 7 — May 20 -->
   <div class="day-card dt-excursion">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">20</span></div>
@@ -1871,10 +2441,14 @@
           <div class="flexera-row">✦ Flexera President's Club event — dinner included</div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may20"></span></div>
+        <textarea class="day-note-input" data-day="may20" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 8 -->
+  <!-- Day 8 — May 21 -->
   <div class="day-card dt-water">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">21</span></div>
@@ -1912,10 +2486,14 @@
           <div class="flexera-row">✦ Flexera Awards Dinner — formal-ish, smart casual/resort attire</div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may21"></span></div>
+        <textarea class="day-note-input" data-day="may21" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 9 -->
+  <!-- Day 9 — May 22 -->
   <div class="day-card dt-depart">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">22</span></div>
@@ -1951,10 +2529,14 @@
           <div class="time-desc">BA 2064 departs 8:25 PM. Transfer provided by Flexera. Arrive airport ~5:30 PM. 12h 35m overnight flight to London Gatwick. Land Saturday 6:00 AM.</div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may22"></span></div>
+        <textarea class="day-note-input" data-day="may22" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 10 -->
+  <!-- Day 10 — May 23 -->
   <div class="day-card dt-london">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">23</span></div>
@@ -2025,10 +2607,14 @@
           </div>
         </div>
       </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may23"></span></div>
+        <textarea class="day-note-input" data-day="may23" placeholder="Add a note… synced with Gabby"></textarea>
+      </div>
     </div>
   </div>
 
-  <!-- Day 11 -->
+  <!-- Day 11 — May 24 -->
   <div class="day-card dt-depart">
     <div class="day-hd">
       <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">24</span></div>
@@ -2053,6 +2639,10 @@
           <div class="time-title">BA 0191 departs for Austin</div>
           <div class="time-desc">10h 15m flight. Arrive AUS 3:25 PM Sunday. Home. Trip complete.</div>
         </div>
+      </div>
+      <div class="day-note-wrap">
+        <div class="day-note-label">📝 Notes <span class="note-status" id="ns-may24"></span></div>
+        <textarea class="day-note-input" data-day="may24" placeholder="Add a note… synced with Gabby"></textarea>
       </div>
     </div>
   </div>
@@ -2334,6 +2924,22 @@
     <p class="section-sub">Out-of-pocket target: ~$2,250+ · Flights &amp; hotel covered by Flexera · one activity TBD</p>
   </div>
 
+  <!-- CURRENCY WIDGET -->
+  <div class="currency-card" id="currencyCard">
+    <div class="currency-title">💱 Live Exchange Rate · USD → MUR</div>
+    <div class="currency-rates" id="currencyRates">
+      <div class="currency-rate-item">
+        <div class="currency-rate-lbl">$1 USD</div>
+        <div class="currency-rate-val" id="cur-1">Loading…</div>
+      </div>
+      <div class="currency-rate-item">
+        <div class="currency-rate-lbl">$100 USD</div>
+        <div class="currency-rate-val" id="cur-100">—</div>
+      </div>
+    </div>
+    <div class="currency-updated" id="curUpdated"></div>
+  </div>
+
   <div class="budget-summary">
     <div class="bdg-sum-item">
       <div class="bdg-sum-lbl">Out-of-Pocket Budget</div>
@@ -2415,7 +3021,7 @@
   <!-- OUT OF POCKET -->
   <div class="bdg-section-lbl">💳 Your Out-of-Pocket</div>
 
-  <div class="bdg-row" data-est="500">
+  <div class="bdg-row" data-est="800">
     <div class="bdg-row-top">
       <div>
         <div class="bdg-cat">🏨 London Accommodation</div>
@@ -2494,49 +3100,702 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════ JOURNAL -->
+<section id="s-journal" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Memories</div>
+    <h2 class="section-title">Photo Journal</h2>
+    <p class="section-sub">Tap a day to upload a photo · Captions and images sync with Gabby</p>
+  </div>
+
+  <div class="journal-grid" id="journalGrid">
+
+    <div class="journal-card" data-day="may14">
+      <div class="journal-card-date">Thu · May 14</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may14')">
+        <div class="journal-upload-btn" id="jup-may14"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may14">Uploading…</div>
+        <img id="jimg-may14" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may14" id="jcap-may14" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may14" style="display:none" onchange="handlePhotoUpload('may14', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may15">
+      <div class="journal-card-date">Fri · May 15</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may15')">
+        <div class="journal-upload-btn" id="jup-may15"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may15">Uploading…</div>
+        <img id="jimg-may15" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may15" id="jcap-may15" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may15" style="display:none" onchange="handlePhotoUpload('may15', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may16">
+      <div class="journal-card-date">Sat · May 16</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may16')">
+        <div class="journal-upload-btn" id="jup-may16"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may16">Uploading…</div>
+        <img id="jimg-may16" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may16" id="jcap-may16" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may16" style="display:none" onchange="handlePhotoUpload('may16', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may17">
+      <div class="journal-card-date">Sun · May 17</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may17')">
+        <div class="journal-upload-btn" id="jup-may17"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may17">Uploading…</div>
+        <img id="jimg-may17" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may17" id="jcap-may17" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may17" style="display:none" onchange="handlePhotoUpload('may17', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may18">
+      <div class="journal-card-date">Mon · May 18</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may18')">
+        <div class="journal-upload-btn" id="jup-may18"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may18">Uploading…</div>
+        <img id="jimg-may18" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may18" id="jcap-may18" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may18" style="display:none" onchange="handlePhotoUpload('may18', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may19">
+      <div class="journal-card-date">Tue · May 19</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may19')">
+        <div class="journal-upload-btn" id="jup-may19"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may19">Uploading…</div>
+        <img id="jimg-may19" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may19" id="jcap-may19" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may19" style="display:none" onchange="handlePhotoUpload('may19', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may20">
+      <div class="journal-card-date">Wed · May 20</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may20')">
+        <div class="journal-upload-btn" id="jup-may20"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may20">Uploading…</div>
+        <img id="jimg-may20" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may20" id="jcap-may20" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may20" style="display:none" onchange="handlePhotoUpload('may20', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may21">
+      <div class="journal-card-date">Thu · May 21</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may21')">
+        <div class="journal-upload-btn" id="jup-may21"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may21">Uploading…</div>
+        <img id="jimg-may21" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may21" id="jcap-may21" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may21" style="display:none" onchange="handlePhotoUpload('may21', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may22">
+      <div class="journal-card-date">Fri · May 22</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may22')">
+        <div class="journal-upload-btn" id="jup-may22"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may22">Uploading…</div>
+        <img id="jimg-may22" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may22" id="jcap-may22" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may22" style="display:none" onchange="handlePhotoUpload('may22', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may23">
+      <div class="journal-card-date">Sat · May 23</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may23')">
+        <div class="journal-upload-btn" id="jup-may23"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may23">Uploading…</div>
+        <img id="jimg-may23" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may23" id="jcap-may23" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may23" style="display:none" onchange="handlePhotoUpload('may23', this.files[0])">
+    </div>
+
+    <div class="journal-card" data-day="may24">
+      <div class="journal-card-date">Sun · May 24</div>
+      <div class="journal-photo-area" onclick="triggerUpload('may24')">
+        <div class="journal-upload-btn" id="jup-may24"><span class="journal-upload-icon">📷</span><span>Add Photo</span></div>
+        <div class="journal-uploading" id="jupl-may24">Uploading…</div>
+        <img id="jimg-may24" src="" alt="" style="display:none;">
+      </div>
+      <textarea class="journal-caption" data-day="may24" id="jcap-may24" placeholder="Caption…" rows="2"></textarea>
+      <input type="file" accept="image/*" id="jfile-may24" style="display:none" onchange="handlePhotoUpload('may24', this.files[0])">
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ RESORT -->
+<section id="s-resort" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Your Home</div>
+    <h2 class="section-title">Resort Guide</h2>
+    <p class="section-sub">One&Only Le Saint Géran · Belle Mare Peninsula · East Coast</p>
+  </div>
+
+  <!-- Overview -->
+  <div class="resort-card">
+    <div class="resort-card-title">🏝 Overview</div>
+    <p style="font-size:0.82rem;color:var(--text-mid);line-height:1.6;margin-bottom:0.75rem;">Private peninsula jutting into the Indian Ocean, with the lagoon on one side and open ocean on the other. The most spectacular resort location in Mauritius. Breakfast included daily at La Terrasse.</p>
+    <div class="resort-logistics-row">
+      <div class="resort-logistics-lbl">Check-in</div>
+      <div class="resort-logistics-val">2:00 PM · May 18</div>
+    </div>
+    <div class="resort-logistics-row">
+      <div class="resort-logistics-lbl">Check-out</div>
+      <div class="resort-logistics-val">12:00 PM · May 22</div>
+    </div>
+    <div class="resort-logistics-row">
+      <div class="resort-logistics-lbl">Breakfast</div>
+      <div class="resort-logistics-val">Included daily · La Terrasse restaurant</div>
+    </div>
+    <div class="resort-logistics-row">
+      <div class="resort-logistics-lbl">Location</div>
+      <div class="resort-logistics-val">Belle Mare Peninsula, east coast · ~45 min from MRU Airport</div>
+    </div>
+  </div>
+
+  <!-- Venues -->
+  <div class="resort-card">
+    <div class="resort-card-title">🍽 Dining &amp; Venues</div>
+    <div class="resort-venue-list">
+      <div class="resort-venue">
+        <div class="resort-venue-name">La Terrasse — All-Day Dining</div>
+        <div class="resort-venue-desc">Adjacent to main pool. Breakfast here every morning (included). Tropical fruit buffet, live stations, freshly squeezed juices. Pool terrace views.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">PRIME — Contemporary Steakhouse</div>
+        <div class="resort-venue-desc">Inside main building. Evening only. Mauritius' first upmarket steakhouse, regularly hosts Michelin-starred guest chefs.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">Tapasake — Japanese Fusion ⚠️ CLOSED TUESDAYS</div>
+        <div class="resort-venue-desc">On stilts over the lagoon. Hot-stone dishes, sashimi, tasting menus, stunning ocean views at night. Book ahead — most popular dinner on the resort.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">La Pointe — Beachfront Creole</div>
+        <div class="resort-venue-desc">Follow beach path east. Catch of the day, Creole spices, feet in the sand. Most authentically Mauritian of the resort restaurants.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">Le Badamier — Mauritian Seafood Lunch</div>
+        <div class="resort-venue-desc">Near beach under tropical trees. Authentic Mauritian flavors, freshly caught seafood. Lunch spot with local character.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">L'Artisan Bakery — Morning Coffee</div>
+        <div class="resort-venue-desc">Near lobby. Artisan pastries, flat whites, fresh bread. Morning ritual before the beach. Open from early morning.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">RIVA — Italian Beachfront Pool Club</div>
+        <div class="resort-venue-desc">Italian Riviera-inspired. Beachfront pool, light plates, cocktails, and the most spectacular ocean view on the property.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spa & Activities -->
+  <div class="resort-card">
+    <div class="resort-card-title">🌿 Spa &amp; Activities</div>
+    <div class="resort-venue-list">
+      <div class="resort-venue">
+        <div class="resort-venue-name">Guerlain Spa</div>
+        <div class="resort-venue-desc">Garden area, follow spa signs from lobby. Mauritius' only Guerlain Spa — hammam, hydrotherapy pool, relaxation lounge. Signature massages and facials.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">Club One Fitness</div>
+        <div class="resort-venue-desc">Adjacent to spa. Full gym, padel courts, tennis courts, yoga pavilion. Open from 6 AM.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">Boathouse / Watersports</div>
+        <div class="resort-venue-desc">Lagoon beach. Kayaks, paddleboards, snorkel gear, water skiing, glass-bottom boat trips. Catamaran pickup Thu May 21 at 8:45 AM from here.</div>
+      </div>
+      <div class="resort-venue">
+        <div class="resort-venue-name">Infinity Pool</div>
+        <div class="resort-venue-desc">Main pool adjacent to La Terrasse. Ocean-horizon infinity edge. The centrepiece of the resort.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logistics -->
+  <div class="resort-card">
+    <div class="resort-card-title">🚗 Logistics &amp; Getting Around</div>
+    <div class="resort-logistics-row">
+      <div class="resort-logistics-lbl">Golf Transfer</div>
+      <div class="resort-logistics-val">Departs main entrance — confirm with concierge the day before</div>
+    </div>
+    <div class="resort-logistics-row">
+      <div class="resort-logistics-lbl">Catamaran</div>
+      <div class="resort-logistics-val">Boathouse area — Thu May 21 at 8:45 AM sharp</div>
+    </div>
+    <div class="resort-logistics-row">
+      <div class="resort-logistics-lbl">Helipad</div>
+      <div class="resort-logistics-val">On property — 10 min helicopter to/from MRU airport (ask concierge)</div>
+    </div>
+    <div class="resort-logistics-row">
+      <div class="resort-logistics-lbl">Airport Transfer</div>
+      <div class="resort-logistics-val">~45 min by road · Flexera provided arrivals May 18 and departures May 22</div>
+    </div>
+  </div>
+
+  <!-- Contacts -->
+  <div class="resort-card">
+    <div class="resort-card-title">📞 Key Contacts</div>
+    <div class="resort-contact-row">
+      <div class="resort-contact-lbl">One&Only Main</div>
+      <a class="resort-contact-tel" href="tel:+2304011800">+230 401 1800</a>
+    </div>
+    <div class="resort-contact-row">
+      <div class="resort-contact-lbl">Mauritius Emergency</div>
+      <a class="resort-contact-tel" href="tel:999">999</a>
+    </div>
+    <div class="resort-contact-row">
+      <div class="resort-contact-lbl">24h Travel Support</div>
+      <a class="resort-contact-tel" href="tel:+18185754313">+1 818-575-4313</a>
+    </div>
+  </div>
+
+  <!-- Weather Widget -->
+  <div class="weather-card" id="weatherCard">
+    <div class="weather-title">🌤 Mauritius 5-Day Forecast · Belle Mare</div>
+    <div class="weather-days" id="weatherDays">
+      <div style="font-size:0.78rem;color:var(--text-muted);padding:0.5rem 0;">Loading forecast…</div>
+    </div>
+    <div class="weather-updated" id="weatherUpdated"></div>
+  </div>
+
+  <!-- Good to Know -->
+  <div class="resort-card">
+    <div class="resort-card-title">💡 Good to Know</div>
+    <ul class="resort-tips-list">
+      <li>Check-in 2pm, Check-out 12pm — ask about late checkout if needed</li>
+      <li>Breakfast included daily at La Terrasse — don't miss it</li>
+      <li>Resort casual throughout — no formal wear required (smart casual for evenings)</li>
+      <li>Currency: Mauritian Rupee (MUR). Exchange at airport or use card at resort</li>
+      <li>Credit cards accepted at all resort venues — Visa and Mastercard widely accepted</li>
+      <li>May weather: 68–81°F, dry season, minimal rain, water 26°C (79°F)</li>
+      <li>Tipping: not mandatory but appreciated. Small rupee tips for housekeeping</li>
+      <li>English and French both widely spoken across Mauritius</li>
+      <li>Tapasake is CLOSED Tuesdays — plan accordingly</li>
+      <li>Concierge can arrange private beach dinners, sunset cruises, and helicopter transfers</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TOAST -->
+<div class="toast" id="toast"></div>
+
 <!-- ═══════════════════════════════════════════════ SCRIPT -->
 <script>
-  // ─── Tab switching ──────────────────────────────────────
+  // ─── Constants ──────────────────────────────────────────
+  const JSONBIN_KEY    = '$2a$10$3yeE7P4Gyycx0WqzSukVwenjLr0I0swnBEf8nhgSRz/SB3ITD15Ky';
+  const JSONBIN_URL    = 'https://api.jsonbin.io/v3/b/69cf2fd9aaba882197bda6bd';
+  const CLOUDINARY_CLOUD  = 'dkkpeynqn';
+  const CLOUDINARY_PRESET = 'mauritius_memories';
+  const DEPARTURE  = new Date('2026-05-14T22:55:00Z');
+  const MRU_ARRIVE = new Date('2026-05-18T02:50:00Z');
+  const MRU_DEPART = new Date('2026-05-22T16:25:00Z');
+  const TRIP_END   = new Date('2026-05-24T19:25:00Z');
+  const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=-20.2&longitude=57.7&daily=temperature_2m_max,temperature_2m_min,weathercode&temperature_unit=fahrenheit&timezone=Indian%2FMauritius';
+  const CURRENCY_URL = 'https://api.exchangerate-api.com/v4/latest/USD';
+
+  // ─── In-memory bin cache ─────────────────────────────────
+  let binData = { notes: {}, photos: {} };
+  let offlineMode = localStorage.getItem('offlineMode') === '1';
+
+  // ─── Tab switching ───────────────────────────────────────
   function showTab(id) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
     document.getElementById('s-' + id).classList.add('active');
     document.querySelector('[data-tab="' + id + '"]').classList.add('active');
-    window.scrollTo({ top: document.querySelector('.nav').offsetTop - 1, behavior: 'smooth' });
+    const nav = document.querySelector('.nav');
+    window.scrollTo({ top: nav.offsetTop - 53, behavior: 'smooth' });
   }
 
-  // ─── Countdown ─────────────────────────────────────────
-  (function () {
-    const depart = new Date('2026-05-14T00:00:00');
-    const today  = new Date();
-    today.setHours(0, 0, 0, 0);
-    const diff = Math.ceil((depart - today) / (1000 * 60 * 60 * 24));
-    const el = document.getElementById('countdown');
-    if      (diff > 1)   el.innerHTML = '<span>' + diff + ' days</span> until departure';
-    else if (diff === 1)  el.innerHTML = '✈ <span>Tomorrow!</span> Pack tonight.';
-    else if (diff === 0)  el.innerHTML = '✈ <span>Today is the day!</span> Safe travels.';
-    else if (diff >= -10) el.innerHTML = '🌊 You are somewhere incredible <span>right now</span>.';
-    else                  el.innerHTML = '🌺 <span>What a trip.</span> Until the next one.';
-  })();
+  // ─── Countdown ───────────────────────────────────────────
+  function updateCountdown() {
+    const now = new Date();
+    const boxes = document.getElementById('countdownBoxes');
+    const msg   = document.getElementById('countdownMsg');
 
-  // ─── Day card expand / collapse ────────────────────────
+    function setBoxes(d, h, m, s) {
+      document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+      document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+    }
+
+    if (now < DEPARTURE) {
+      const diff = DEPARTURE - now;
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      setBoxes(d, h, m, s);
+      msg.innerHTML = 'until departure from Austin';
+    } else if (now >= DEPARTURE && now < MRU_ARRIVE) {
+      boxes.style.display = 'none';
+      msg.innerHTML = '✈ <span>In the air to London</span> — journey has begun!';
+    } else if (now >= MRU_ARRIVE && now < MRU_DEPART) {
+      const diff = MRU_DEPART - now;
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      setBoxes(d, h, m, s);
+      msg.innerHTML = '🌊 <span>In Mauritius!</span> Time remaining at resort';
+    } else if (now >= MRU_DEPART && now < TRIP_END) {
+      boxes.style.display = 'none';
+      msg.innerHTML = '✈ <span>Heading home</span> — what a trip.';
+    } else {
+      boxes.style.display = 'none';
+      msg.innerHTML = '🌺 <span>Trip complete.</span> Until the next adventure.';
+    }
+  }
+
+  // ─── Clock bar ───────────────────────────────────────────
+  function updateClocks() {
+    function fmt(tz) {
+      const s = new Date().toLocaleTimeString('en-US', {
+        timeZone: tz,
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+      return s;
+    }
+    document.getElementById('ck-austin').textContent    = fmt('America/Chicago');
+    document.getElementById('ck-london').textContent    = fmt('Europe/London');
+    document.getElementById('ck-mauritius').textContent = fmt('Indian/Mauritius');
+  }
+
+  // ─── Fetch with localStorage cache ──────────────────────
+  async function fetchWithCache(url, key, ttlMs) {
+    if (offlineMode) {
+      const cached = localStorage.getItem(key);
+      if (cached) {
+        try { return JSON.parse(cached).data; } catch(e) {}
+      }
+      return null;
+    }
+    const cached = localStorage.getItem(key);
+    if (cached) {
+      try {
+        const obj = JSON.parse(cached);
+        if (Date.now() - obj.ts < ttlMs) return obj.data;
+      } catch(e) {}
+    }
+    try {
+      const res  = await fetch(url);
+      const data = await res.json();
+      localStorage.setItem(key, JSON.stringify({ ts: Date.now(), data }));
+      return data;
+    } catch(e) {
+      const fallback = localStorage.getItem(key);
+      if (fallback) {
+        try { return JSON.parse(fallback).data; } catch(ex) {}
+      }
+      return null;
+    }
+  }
+
+  // ─── Weather emoji/desc ──────────────────────────────────
+  function weatherEmoji(code) {
+    if (code === 0) return '☀️';
+    if (code <= 3)  return '⛅';
+    if (code <= 48) return '🌫️';
+    if (code <= 67) return '🌦️';
+    if (code <= 77) return '❄️';
+    if (code <= 82) return '🌧️';
+    return '⛈️';
+  }
+
+  // ─── Fetch weather ───────────────────────────────────────
+  async function fetchWeather() {
+    const data = await fetchWithCache(WEATHER_URL, 'wx_mauritius', 3 * 3600 * 1000);
+    const el = document.getElementById('weatherDays');
+    const upd = document.getElementById('weatherUpdated');
+    if (!data || !data.daily) {
+      el.innerHTML = '<span style="font-size:0.78rem;color:var(--text-muted);">Weather unavailable — check back later.</span>';
+      return;
+    }
+    const days  = data.daily;
+    const names = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    let html = '';
+    for (let i = 0; i < 5; i++) {
+      const d    = new Date(days.time[i] + 'T12:00:00');
+      const name = names[d.getDay()];
+      const hi   = Math.round(days.temperature_2m_max[i]);
+      const lo   = Math.round(days.temperature_2m_min[i]);
+      const icon = weatherEmoji(days.weathercode[i]);
+      html += `<div class="weather-day">
+        <div class="weather-day-name">${name}</div>
+        <div class="weather-day-icon">${icon}</div>
+        <div class="weather-day-hi">${hi}°</div>
+        <div class="weather-day-lo">${lo}°F</div>
+      </div>`;
+    }
+    el.innerHTML = html;
+    const cached = localStorage.getItem('wx_mauritius');
+    if (cached) {
+      const ts = JSON.parse(cached).ts;
+      upd.textContent = 'Updated ' + new Date(ts).toLocaleTimeString();
+    }
+  }
+
+  // ─── Fetch currency ──────────────────────────────────────
+  async function fetchCurrency() {
+    const data = await fetchWithCache(CURRENCY_URL, 'fx_usd_mur', 3600 * 1000);
+    const el1 = document.getElementById('cur-1');
+    const el100 = document.getElementById('cur-100');
+    const upd = document.getElementById('curUpdated');
+    if (!data || !data.rates || !data.rates.MUR) {
+      el1.textContent = '≈ 45 MUR (est.)';
+      el100.textContent = '≈ 4,500 MUR (est.)';
+      return;
+    }
+    const rate = data.rates.MUR;
+    el1.textContent   = rate.toFixed(2) + ' MUR';
+    el100.textContent = (rate * 100).toFixed(0) + ' MUR';
+    const cached = localStorage.getItem('fx_usd_mur');
+    if (cached) {
+      const ts = JSON.parse(cached).ts;
+      upd.textContent = 'Updated ' + new Date(ts).toLocaleString();
+    }
+  }
+
+  // ─── JSONBin: load bin data ──────────────────────────────
+  async function loadBinData() {
+    if (offlineMode) {
+      const local = localStorage.getItem('binData_cache');
+      if (local) {
+        try { binData = JSON.parse(local); } catch(e) {}
+      }
+      notesInit();
+      journalInit();
+      return;
+    }
+    try {
+      const res = await fetch(JSONBIN_URL + '/latest', {
+        headers: { 'X-Master-Key': JSONBIN_KEY }
+      });
+      if (res.ok) {
+        const json = await res.json();
+        const rec  = json.record || {};
+        binData = {
+          notes:  rec.notes  || {},
+          photos: rec.photos || {}
+        };
+        localStorage.setItem('binData_cache', JSON.stringify(binData));
+      } else {
+        const local = localStorage.getItem('binData_cache');
+        if (local) { try { binData = JSON.parse(local); } catch(e) {} }
+      }
+    } catch(e) {
+      const local = localStorage.getItem('binData_cache');
+      if (local) { try { binData = JSON.parse(local); } catch(e) {} }
+    }
+    notesInit();
+    journalInit();
+  }
+
+  // ─── JSONBin: save bin data ──────────────────────────────
+  async function saveBinData() {
+    localStorage.setItem('binData_cache', JSON.stringify(binData));
+    if (offlineMode) return false;
+    try {
+      const res = await fetch(JSONBIN_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Master-Key': JSONBIN_KEY
+        },
+        body: JSON.stringify(binData)
+      });
+      return res.ok;
+    } catch(e) {
+      return false;
+    }
+  }
+
+  // ─── Notes ──────────────────────────────────────────────
+  const noteTimers = {};
+
+  function notesInit() {
+    document.querySelectorAll('.day-note-input').forEach(ta => {
+      const day = ta.dataset.day;
+      if (binData.notes && binData.notes[day]) {
+        ta.value = binData.notes[day];
+      } else {
+        const local = localStorage.getItem('note_' + day);
+        if (local) ta.value = local;
+      }
+      ta.addEventListener('input', () => {
+        localStorage.setItem('note_' + day, ta.value);
+        setNoteStatus(day, 'typing');
+        clearTimeout(noteTimers[day]);
+        noteTimers[day] = setTimeout(() => saveNote(day, ta.value), 1000);
+      });
+    });
+  }
+
+  function setNoteStatus(day, state) {
+    const el = document.getElementById('ns-' + day);
+    if (!el) return;
+    if (state === 'typing')  el.textContent = '';
+    if (state === 'saving')  el.textContent = 'Saving…';
+    if (state === 'saved')   el.textContent = 'Saved ✓';
+    if (state === 'local')   el.textContent = 'Saved locally';
+  }
+
+  async function saveNote(day, text) {
+    setNoteStatus(day, 'saving');
+    binData.notes = binData.notes || {};
+    binData.notes[day] = text;
+    const ok = await saveBinData();
+    setNoteStatus(day, ok ? 'saved' : 'local');
+    setTimeout(() => setNoteStatus(day, ''), 3000);
+  }
+
+  // ─── Journal / Photos ────────────────────────────────────
+  function journalInit() {
+    if (!binData.photos) return;
+    for (const [day, obj] of Object.entries(binData.photos)) {
+      if (obj && obj.url) renderPhoto(day, obj.url, obj.caption || '');
+    }
+    // Caption debounce
+    document.querySelectorAll('.journal-caption').forEach(ta => {
+      const day = ta.dataset.day;
+      let capTimer;
+      ta.addEventListener('input', () => {
+        clearTimeout(capTimer);
+        capTimer = setTimeout(() => saveCaption(day, ta.value), 1000);
+      });
+    });
+  }
+
+  async function saveCaption(day, caption) {
+    binData.photos = binData.photos || {};
+    binData.photos[day] = binData.photos[day] || {};
+    binData.photos[day].caption = caption;
+    await saveBinData();
+  }
+
+  function triggerUpload(day) {
+    const img = document.getElementById('jimg-' + day);
+    if (img && img.src && img.style.display !== 'none') return;
+    document.getElementById('jfile-' + day).click();
+  }
+
+  async function handlePhotoUpload(day, file) {
+    if (!file) return;
+    const uploadBtn  = document.getElementById('jup-' + day);
+    const uploading  = document.getElementById('jupl-' + day);
+    uploadBtn.classList.add('hidden');
+    uploading.style.display = 'flex';
+
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      fd.append('upload_preset', CLOUDINARY_PRESET);
+      const res  = await fetch('https://api.cloudinary.com/v1_1/' + CLOUDINARY_CLOUD + '/image/upload', {
+        method: 'POST', body: fd
+      });
+      if (!res.ok) throw new Error('Upload failed');
+      const data = await res.json();
+      const url  = data.secure_url;
+      const capEl = document.getElementById('jcap-' + day);
+      const caption = capEl ? capEl.value : '';
+      renderPhoto(day, url, caption);
+      binData.photos = binData.photos || {};
+      binData.photos[day] = { url, caption };
+      await saveBinData();
+      showToast('Photo saved!');
+    } catch(e) {
+      uploading.style.display = 'none';
+      uploadBtn.classList.remove('hidden');
+      // Fallback: save blob URL to localStorage preview
+      const localUrl = URL.createObjectURL(file);
+      renderPhoto(day, localUrl, '');
+      showToast('Saved locally (sync when online)');
+    }
+  }
+
+  function renderPhoto(day, url, caption) {
+    const img    = document.getElementById('jimg-' + day);
+    const upBtn  = document.getElementById('jup-' + day);
+    const uplEl  = document.getElementById('jupl-' + day);
+    const capEl  = document.getElementById('jcap-' + day);
+    if (img) {
+      img.src = url;
+      img.style.display = 'block';
+    }
+    if (upBtn)  upBtn.classList.add('hidden');
+    if (uplEl)  uplEl.style.display = 'none';
+    if (capEl && caption) capEl.value = caption;
+  }
+
+  // ─── Offline mode ────────────────────────────────────────
+  async function toggleOffline() {
+    offlineMode = !offlineMode;
+    localStorage.setItem('offlineMode', offlineMode ? '1' : '0');
+    const btn = document.getElementById('offlineToggle');
+    btn.classList.toggle('active', offlineMode);
+
+    if (offlineMode && 'serviceWorker' in navigator) {
+      try {
+        const reg = await navigator.serviceWorker.register('sw.js');
+        // Trigger immediate cache population
+        if (reg.installing) {
+          await new Promise(res => { reg.installing.addEventListener('statechange', e => { if (e.target.state === 'activated') res(); }); });
+        }
+        showToast('✓ Ready for offline use');
+      } catch (err) {
+        showToast('✓ Offline mode active');
+      }
+    } else {
+      showToast(offlineMode ? '✓ Offline mode active' : 'Online mode restored');
+    }
+  }
+
+  function initOfflineBtn() {
+    const btn = document.getElementById('offlineToggle');
+    btn.classList.toggle('active', offlineMode);
+  }
+
+  // ─── Register Service Worker ─────────────────────────────
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+
+  // ─── Toast ───────────────────────────────────────────────
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  // ─── Day card expand / collapse ──────────────────────────
   document.querySelectorAll('.day-hd').forEach(hd => {
     hd.addEventListener('click', () => hd.closest('.day-card').classList.toggle('open'));
   });
 
-  // ─── Packing checkboxes ─────────────────────────────────
+  // ─── Packing checkboxes ──────────────────────────────────
   const TOTAL_PACK = 47;
-
   const CAT_IDS = {
-    transit:  'cc-transit',
-    tech:     'cc-tech',
-    beach:    'cc-beach',
-    casual:   'cc-casual',
-    smart:    'cc-smart',
-    london:   'cc-london',
-    under:    'cc-under',
-    health:   'cc-health',
-    docs:     'cc-docs'
+    transit: 'cc-transit', tech: 'cc-tech', beach: 'cc-beach',
+    casual: 'cc-casual',   smart: 'cc-smart', london: 'cc-london',
+    under: 'cc-under',     health: 'cc-health', docs: 'cc-docs'
   };
 
   function packInit() {
@@ -2544,11 +3803,9 @@
       const id = item.dataset.id;
       if (localStorage.getItem('pack_' + id) === '1') {
         item.classList.add('checked');
-        item.querySelector('.pack-cb').classList.add('checked');
       }
       item.addEventListener('click', () => {
         const isChecked = item.classList.toggle('checked');
-        item.querySelector('.pack-cb').classList.toggle('checked', isChecked);
         localStorage.setItem('pack_' + id, isChecked ? '1' : '0');
         packUpdate();
       });
@@ -2560,7 +3817,6 @@
     const checked = document.querySelectorAll('.pack-item.checked').length;
     document.getElementById('pack-count').textContent = checked + ' / ' + TOTAL_PACK + ' packed';
     document.getElementById('pack-bar').style.width = (checked / TOTAL_PACK * 100).toFixed(1) + '%';
-
     for (const [cat, elId] of Object.entries(CAT_IDS)) {
       const list = document.querySelector('.pack-list[data-cat="' + cat + '"]');
       if (!list) continue;
@@ -2571,30 +3827,22 @@
     }
   }
 
-  packInit();
-
-  // ─── Wishlist checkboxes ────────────────────────────────
+  // ─── Wishlist checkboxes ─────────────────────────────────
   function wishInit() {
     document.querySelectorAll('.wish-card').forEach(card => {
       const id = card.dataset.id;
-      if (localStorage.getItem('wish_' + id) === '1') {
-        card.classList.add('done');
-        card.querySelector('.wish-cb').classList.add('checked');
-      }
+      if (localStorage.getItem('wish_' + id) === '1') card.classList.add('done');
       card.addEventListener('click', () => {
         const isDone = card.classList.toggle('done');
-        card.querySelector('.wish-cb').classList.toggle('checked', isDone);
         localStorage.setItem('wish_' + id, isDone ? '1' : '0');
       });
     });
   }
 
-  wishInit();
-
-  // ─── Budget tracker ─────────────────────────────────────
+  // ─── Budget tracker ──────────────────────────────────────
   function budgetInit() {
     document.querySelectorAll('.bdg-actual-input').forEach(input => {
-      const id   = input.dataset.id;
+      const id    = input.dataset.id;
       const saved = localStorage.getItem(id);
       if (saved !== null && saved !== '') {
         input.value = saved;
@@ -2612,8 +3860,11 @@
 
   function updateBar(row) {
     const est    = parseFloat(row.dataset.est) || 0;
-    const actual = parseFloat(row.querySelector('.bdg-actual-input').value) || 0;
+    const input  = row.querySelector('.bdg-actual-input');
+    if (!input) return;
+    const actual = parseFloat(input.value) || 0;
     const fill   = row.querySelector('.bdg-bar-fill');
+    if (!fill) return;
     if (!est || !actual) { fill.style.width = '0%'; fill.classList.remove('over'); return; }
     const pct = Math.min((actual / est) * 100, 100).toFixed(1);
     fill.style.width = pct + '%';
@@ -2624,17 +3875,32 @@
     let totalBudget = 0, totalSpent = 0, anySpent = false;
     document.querySelectorAll('.bdg-row:not(.covered)').forEach(row => {
       totalBudget += parseFloat(row.dataset.est) || 0;
-      const v = parseFloat(row.querySelector('.bdg-actual-input').value);
+      const inp = row.querySelector('.bdg-actual-input');
+      if (!inp) return;
+      const v = parseFloat(inp.value);
       if (!isNaN(v) && v > 0) { totalSpent += v; anySpent = true; }
     });
     const fmt = n => '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
-    document.getElementById('budget-total').textContent           = fmt(totalBudget);
-    document.getElementById('budget-spent').textContent           = anySpent ? fmt(totalSpent) : '—';
-    document.getElementById('budget-remaining').textContent       = anySpent ? fmt(totalBudget - totalSpent) : '—';
-    document.getElementById('budget-total-actual').textContent    = anySpent ? fmt(totalSpent) : '—';
+    document.getElementById('budget-total').textContent        = fmt(totalBudget);
+    document.getElementById('budget-spent').textContent        = anySpent ? fmt(totalSpent) : '—';
+    document.getElementById('budget-remaining').textContent    = anySpent ? fmt(totalBudget - totalSpent) : '—';
+    document.getElementById('budget-total-actual').textContent = anySpent ? fmt(totalSpent) : '—';
   }
 
-  budgetInit();
+  // ─── Initialize ──────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    initOfflineBtn();
+    packInit();
+    wishInit();
+    budgetInit();
+    loadBinData();
+    fetchWeather();
+    fetchCurrency();
+    updateCountdown();
+    updateClocks();
+    setInterval(updateCountdown, 1000);
+    setInterval(updateClocks, 1000);
+  });
 </script>
 </body>
 </html>
