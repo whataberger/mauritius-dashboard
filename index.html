@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mauritius 2026 · Marcus &amp; Gabby</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ocean-deep:  #0D3347;
+      --ocean:       #1A4F6E;
+      --ocean-mid:   #2E7DA8;
+      --sand-dark:   #B8945E;
+      --sand:        #C9A87C;
+      --sand-light:  #EAD9C0;
+      --sand-pale:   #F5EFE3;
+      --coral:       #C8644A;
+      --bg:          #FEFCF8;
+      --bg-alt:      #F5EFE3;
+      --white:       #FFFFFF;
+      --text:        #1C1A18;
+      --text-mid:    #4A4540;
+      --text-muted:  #857D74;
+      --border:      #E0D4C0;
+      --shadow:      rgba(13, 51, 71, 0.07);
+      --shadow-md:   rgba(13, 51, 71, 0.13);
+      --r:           12px;
+      --r-sm:        8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100dvh;
+    }
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, #071e2c 0%, var(--ocean-deep) 30%, var(--ocean) 65%, #1e6b8a 100%);
+      min-height: 88dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(201,168,124,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(46,125,168,0.15) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-wave {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+    }
+    .hero-wave svg { display: block; width: 100%; height: 56px; }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.80);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.38rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-flexera-badge {
+      display: inline-block;
+      background: rgba(201,168,124,0.18);
+      border: 1px solid rgba(201,168,124,0.38);
+      color: var(--sand-light);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--sand-light);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 9vw, 4.5rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-names {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.50);
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-dates {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-date-block { text-align: center; }
+
+    .hero-date-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-date-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-date-sub {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.40);
+      margin-top: 0.1rem;
+    }
+
+    .hero-sep {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .hero-pill {
+      display: inline-block;
+      background: rgba(201,168,124,0.18);
+      border: 1px solid rgba(201,168,124,0.35);
+      border-radius: 100px;
+      padding: 0.45rem 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--sand-light);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-countdown {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .hero-countdown span {
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+    }
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(254,252,248,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 16px var(--shadow);
+    }
+
+    .nav-tabs {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+
+    .nav-tab {
+      flex: 1;
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 0.65rem 0.5rem 0.6rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      transition: color 0.18s, border-color 0.18s;
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-tab .ti { font-size: 1.1rem; line-height: 1; }
+
+    .nav-tab.active {
+      color: var(--ocean);
+      border-bottom-color: var(--ocean);
+    }
+
+    /* ─── SECTIONS ───────────────────────────────────────── */
+    .section {
+      display: none;
+      padding: 2rem 1.25rem 5rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .section.active { display: block; }
+
+    .section-header { margin-bottom: 1.75rem; }
+
+    .section-eyebrow {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sand-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--ocean-deep);
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ─── FLIGHTS ────────────────────────────────────────── */
+    .flight-card {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 14px var(--shadow);
+    }
+
+    .flight-hd {
+      background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 100%);
+      padding: 1rem 1.25rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .flight-hd-dir {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.15rem;
+    }
+
+    .flight-hd-route {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .flight-tag {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 6px;
+      padding: 0.22rem 0.6rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .flight-legs { padding: 1.25rem; }
+
+    .flight-leg {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 0 0.875rem;
+      position: relative;
+    }
+
+    .flight-leg-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4px;
+    }
+
+    .fl-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--ocean);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fl-bar {
+      width: 1px;
+      flex: 1;
+      background: var(--border);
+      margin: 3px 0;
+      min-height: 36px;
+      position: relative;
+    }
+
+    .fl-plane {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.75rem;
+      color: var(--sand);
+      background: var(--white);
+      padding: 1px 0;
+    }
+
+    .flight-leg-info { padding-bottom: 1rem; }
+    .flight-leg:last-child .flight-leg-info { padding-bottom: 0; }
+
+    .fl-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--ocean-deep);
+      line-height: 1;
+    }
+
+    .fl-airport {
+      font-size: 0.75rem;
+      color: var(--text-mid);
+      margin-top: 0.1rem;
+    }
+
+    .fl-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .fl-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.15rem 0.55rem;
+    }
+
+    .fl-dur {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      padding: 0.2rem 0 0.6rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .fl-dur::before { content: ''; display: block; width: 20px; height: 1px; background: var(--border); }
+
+    .flight-layover {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .layover-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--sand);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .transfer-card {
+      background: var(--sand-pale);
+      border: 1px solid var(--sand-light);
+      border-radius: var(--r);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .transfer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ocean-deep);
+      margin-bottom: 0.875rem;
+    }
+
+    .transfer-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.82rem;
+    }
+
+    .transfer-lbl {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sand-dark);
+      min-width: 72px;
+      padding-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .transfer-val { color: var(--text-mid); line-height: 1.45; }
+
+    .note-box {
+      background: var(--sand-pale);
+      border-left: 3px solid var(--sand);
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin-top: 0.25rem;
+    }
+
+    .alert-box {
+      background: #FFF4EC;
+      border-left: 3px solid #D4774A;
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: #6B3A20;
+      line-height: 1.5;
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .seat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .seat-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .seat-name { color: var(--text-muted); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .seat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--ocean-deep);
+      font-weight: 500;
+    }
+
+    /* ─── ITINERARY ──────────────────────────────────────── */
+    .day-card {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 0.875rem;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .day-hd {
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .day-num {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--day-bg, var(--bg-alt));
+      color: var(--day-color, var(--ocean));
+    }
+
+    .day-num-lbl {
+      font-size: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      line-height: 1;
+    }
+
+    .day-num-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .day-hd-info { flex: 1; min-width: 0; }
+
+    .day-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ocean-deep);
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .day-date { font-size: 0.7rem; color: var(--text-muted); }
+
+    .day-badge {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border-radius: 100px;
+      background: var(--day-bg, var(--bg-alt));
+      color: var(--day-color, var(--ocean));
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .day-chevron {
+      color: var(--text-muted);
+      transition: transform 0.22s;
+      flex-shrink: 0;
+    }
+
+    .day-card.open .day-chevron { transform: rotate(180deg); }
+
+    .day-body {
+      display: none;
+      border-top: 1px solid var(--bg-alt);
+      padding: 0 1.1rem 1.1rem;
+    }
+
+    .day-card.open .day-body { display: block; }
+
+    .time-row {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--bg-alt);
+    }
+
+    .time-row:last-child { border-bottom: none; }
+
+    .time-lbl {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--sand-dark);
+      min-width: 60px;
+      padding-top: 0.15rem;
+    }
+
+    .time-content { flex: 1; }
+
+    .time-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.18rem;
+    }
+
+    .time-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .meal-chips { margin-top: 0.5rem; }
+
+    .meal-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.66rem;
+      color: var(--text-muted);
+      background: var(--sand-pale);
+      border: 1px solid var(--sand-light);
+      border-radius: 100px;
+      padding: 0.15rem 0.6rem;
+      margin-right: 0.35rem;
+      margin-top: 0.2rem;
+    }
+
+    /* Flexera hosted badge */
+    .flexera-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #E8F2E8;
+      color: #2F6B2D;
+      border: 1px solid #B8D9B7;
+      border-radius: 100px;
+      padding: 0.2rem 0.6rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .flexera-row {
+      background: #F3FAF2;
+      border: 1px solid #C8E5C7;
+      border-radius: var(--r-sm);
+      padding: 0.6rem 0.8rem;
+      font-size: 0.78rem;
+      color: #2F6B2D;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Confirmed reservation badge (green) */
+    .confirmed-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #1F6B3A;
+      color: #fff;
+      border-radius: 100px;
+      padding: 0.22rem 0.65rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .confirmed-row {
+      background: #F0FAF3;
+      border: 1px solid #A8D9B8;
+      border-radius: var(--r-sm);
+      padding: 0.7rem 0.9rem;
+      font-size: 0.78rem;
+      color: #1F5A30;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .confirmed-row strong { font-weight: 600; }
+
+    /* Unconfirmed / to-do badge (amber) */
+    .todo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      background: #FFF3D6;
+      color: #8A5C00;
+      border: 1px solid #F0CC6A;
+      border-radius: 100px;
+      padding: 0.2rem 0.6rem;
+      margin-left: 0.3rem;
+      vertical-align: middle;
+    }
+
+    .todo-row {
+      background: #FFFBF0;
+      border: 1px solid #F0CC6A;
+      border-radius: var(--r-sm);
+      padding: 0.65rem 0.9rem;
+      font-size: 0.77rem;
+      color: #7A5200;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .todo-row + .todo-row { margin-top: 0.35rem; }
+
+    /* Hotel recommendation card */
+    .hotel-rec-block {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 0.9rem 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .hotel-rec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ocean-deep);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hotel-rec-area {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ocean);
+      margin-bottom: 0.2rem;
+      margin-top: 0.6rem;
+    }
+
+    .hotel-rec-area:first-of-type { margin-top: 0; }
+
+    .hotel-rec-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 0.5rem;
+    }
+
+    .hotel-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.5rem 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.77rem;
+    }
+
+    .hotel-option:first-of-type { border-top: none; padding-top: 0; }
+
+    .hotel-option-name {
+      font-weight: 500;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .hotel-option-price {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Day type color tokens */
+    .dt-travel   { --day-color:#4A7B9D; --day-bg:#E8F3FA; }
+    .dt-arrival  { --day-color:#4D8A66; --day-bg:#E8F5EE; }
+    .dt-beach    { --day-color:#2E7DA8; --day-bg:#E3F2FA; }
+    .dt-excursion{ --day-color:#8B6914; --day-bg:#FAF2DE; }
+    .dt-explore  { --day-color:#6B5BAD; --day-bg:#F0ECFA; }
+    .dt-water    { --day-color:#1A7EA0; --day-bg:#DFF2F9; }
+    .dt-spa      { --day-color:#9E4B6A; --day-bg:#F8ECF0; }
+    .dt-depart   { --day-color:#6B6460; --day-bg:#EEEBE8; }
+    .dt-london   { --day-color:#5B3F8A; --day-bg:#F0EBF9; }
+
+    /* ─── PACKING ────────────────────────────────────────── */
+    .pack-progress {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .pack-progress-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .pack-progress-text strong {
+      color: var(--ocean);
+      font-weight: 500;
+    }
+
+    .pack-bar-track {
+      flex: 1;
+      height: 5px;
+      background: var(--bg-alt);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .pack-bar-fill {
+      height: 100%;
+      background: var(--ocean);
+      border-radius: 3px;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .pack-cat { margin-bottom: 1.5rem; }
+
+    .pack-cat-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ocean-deep);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .pack-cat-count {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    .pack-list {
+      background: var(--white);
+      border-radius: var(--r-sm);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .pack-item {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--bg-alt);
+      cursor: pointer;
+      transition: background 0.12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .pack-item:last-child { border-bottom: none; }
+
+    .pack-cb {
+      width: 20px; height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 5px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      background: white;
+    }
+
+    .pack-item.checked .pack-cb {
+      background: var(--ocean);
+      border-color: var(--ocean);
+    }
+
+    .pack-item.checked .pack-cb::after {
+      content: '';
+      width: 5px; height: 9px;
+      border: 2px solid white;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg) translateY(-1px);
+    }
+
+    .pack-label {
+      font-size: 0.86rem;
+      color: var(--text);
+      flex: 1;
+      transition: color 0.15s;
+    }
+
+    .pack-item.checked .pack-label {
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .pack-note {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* ─── WISHLIST ───────────────────────────────────────── */
+    .wish-section-lbl {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .wish-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .wish-card {
+      background: var(--white);
+      border-radius: var(--r-sm);
+      border: 1px solid var(--border);
+      padding: 1rem 1rem 0.9rem;
+      position: relative;
+      box-shadow: 0 1px 8px var(--shadow);
+      transition: opacity 0.2s;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .wish-card.done {
+      opacity: 0.55;
+      background: var(--bg-alt);
+    }
+
+    .wish-cb {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      width: 20px; height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      background: white;
+      flex-shrink: 0;
+    }
+
+    .wish-card.done .wish-cb {
+      background: var(--ocean);
+      border-color: var(--ocean);
+    }
+
+    .wish-card.done .wish-cb::after {
+      content: '';
+      width: 4px; height: 8px;
+      border: 2px solid white;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg) translateY(-1px);
+    }
+
+    .wish-emoji { font-size: 1.4rem; margin-bottom: 0.35rem; }
+
+    .wish-type {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sand-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .wish-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ocean-deep);
+      line-height: 1.25;
+      margin-bottom: 0.3rem;
+      padding-right: 1.4rem;
+    }
+
+    .wish-desc {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* ─── BUDGET ─────────────────────────────────────────── */
+    .budget-summary {
+      background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 100%);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-around;
+      gap: 0.5rem;
+    }
+
+    .bdg-sum-item { text-align: center; }
+
+    .bdg-sum-lbl {
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 0.3rem;
+    }
+
+    .bdg-sum-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .bdg-sum-sub { font-size: 0.6rem; opacity: 0.4; margin-top: 0.2rem; }
+
+    .bdg-sep { width: 1px; background: rgba(255,255,255,0.15); align-self: stretch; }
+
+    .budget-note {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .bdg-section-lbl {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 1.25rem 0 0.6rem;
+    }
+
+    .bdg-row {
+      background: var(--white);
+      border-radius: var(--r-sm);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 0.625rem;
+      box-shadow: 0 1px 6px var(--shadow);
+    }
+
+    .bdg-row.covered {
+      background: #F3FAF2;
+      border-color: #C8E5C7;
+    }
+
+    .bdg-row-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+
+    .bdg-row.covered .bdg-row-top { margin-bottom: 0; }
+
+    .bdg-cat {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .bdg-cat-note {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .covered-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #E8F2E8;
+      color: #2F6B2D;
+      border: 1px solid #B8D9B7;
+      border-radius: 100px;
+      padding: 0.18rem 0.6rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .bdg-amounts { display: flex; gap: 1.25rem; align-items: flex-start; }
+
+    .bdg-amt-wrap { text-align: right; }
+
+    .bdg-amt-lbl {
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.1rem;
+    }
+
+    .bdg-amt-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--ocean-deep);
+    }
+
+    .bdg-actual-input {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--coral);
+      border: none;
+      border-bottom: 1px dashed var(--border);
+      background: none;
+      width: 75px;
+      text-align: right;
+      outline: none;
+      padding: 0;
+      display: block;
+    }
+
+    .bdg-actual-input::placeholder { color: var(--border); }
+
+    .bdg-bar-track {
+      height: 4px;
+      background: var(--bg-alt);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bdg-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--ocean-mid), var(--ocean));
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .bdg-bar-fill.over { background: var(--coral); }
+
+    .bdg-total {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 0.9rem 1.1rem;
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bdg-total-lbl {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .bdg-total-vals { display: flex; gap: 1.25rem; }
+
+    .bdg-total-amt { text-align: right; }
+
+    .bdg-total-amt .bdg-amt-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ocean-deep);
+    }
+
+    .bdg-total-amt .bdg-amt-val.actual { color: var(--coral); }
+
+    /* ─── UTILITIES ──────────────────────────────────────── */
+    .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+    @media (max-width: 380px) {
+      .wish-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.4rem; }
+      .bdg-amounts { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════ HERO -->
+<div class="hero">
+  <div class="hero-badge">Belle Mare Peninsula &nbsp;·&nbsp; East Mauritius</div>
+  <div class="hero-flexera-badge">✦ Flexera President's Club 2026</div>
+  <p class="hero-eyebrow">One&amp;Only</p>
+  <h1 class="hero-title">Le Saint Géran</h1>
+  <p class="hero-names">Marcus &amp; Gabby &nbsp;·&nbsp; May 2026</p>
+
+  <div class="hero-dates">
+    <div class="hero-date-block">
+      <div class="hero-date-label">Depart</div>
+      <div class="hero-date-val">May 14</div>
+      <div class="hero-date-sub">Thursday · AUS</div>
+    </div>
+    <div class="hero-sep"></div>
+    <div class="hero-date-block">
+      <div class="hero-date-label">Mauritius</div>
+      <div class="hero-date-val">May 18–22</div>
+      <div class="hero-date-sub">4 nights</div>
+    </div>
+    <div class="hero-sep"></div>
+    <div class="hero-date-block">
+      <div class="hero-date-label">Home</div>
+      <div class="hero-date-val">May 24</div>
+      <div class="hero-date-sub">Sunday · AUS</div>
+    </div>
+  </div>
+
+  <div class="hero-pill">4 nights in paradise · London bookends</div>
+  <div class="hero-countdown" id="countdown">Loading…</div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#FEFCF8"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ NAV -->
+<nav class="nav">
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-tab="flights" onclick="showTab('flights')">
+      <span class="ti">✈</span>Flights
+    </button>
+    <button class="nav-tab" data-tab="itinerary" onclick="showTab('itinerary')">
+      <span class="ti">🗓</span>Itinerary
+    </button>
+    <button class="nav-tab" data-tab="packing" onclick="showTab('packing')">
+      <span class="ti">🧳</span>Packing
+    </button>
+    <button class="nav-tab" data-tab="wishlist" onclick="showTab('wishlist')">
+      <span class="ti">⭐</span>Wishlist
+    </button>
+    <button class="nav-tab" data-tab="budget" onclick="showTab('budget')">
+      <span class="ti">💰</span>Budget
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════ FLIGHTS -->
+<section id="s-flights" class="section active">
+  <div class="section-header">
+    <div class="section-eyebrow">Getting There</div>
+    <h2 class="section-title">Flight &amp; Transfer Info</h2>
+    <p class="section-sub">Reservation: <strong>DFIOQN</strong> &nbsp;·&nbsp; Airline ref: <strong>A59GZ5</strong></p>
+  </div>
+
+  <div class="alert-box">
+    ⚠️ <strong>UK ETA Required</strong> — Both UK layovers need an Electronic Travel Authorisation. Apply before departure at <strong>gov.uk/eta</strong>. Takes minutes, valid 2 years. Don't skip this.
+  </div>
+
+  <!-- OUTBOUND -->
+  <div class="flight-card">
+    <div class="flight-hd">
+      <div>
+        <div class="flight-hd-dir">Outbound — Leg 1 of 2</div>
+        <div class="flight-hd-route">Austin → London</div>
+      </div>
+      <div class="flight-tag">Thu May 14</div>
+    </div>
+
+    <div class="flight-legs">
+      <div class="flight-leg">
+        <div class="flight-leg-line">
+          <div class="fl-dot"></div>
+          <div class="fl-bar"><span class="fl-plane">✈</span></div>
+        </div>
+        <div class="flight-leg-info">
+          <div class="fl-time">5:55 <small style="font-size:1rem;opacity:.6">PM</small></div>
+          <div class="fl-airport">Austin–Bergstrom International (AUS)</div>
+          <div class="fl-meta">
+            <span class="fl-chip">BA 0190</span>
+            <span class="fl-chip">British Airways</span>
+            <span class="fl-chip">Airbus A351</span>
+          </div>
+          <div class="fl-dur">9h 20m direct</div>
+          <div class="seat-grid">
+            <div class="seat-item"><div class="seat-name">Marcus</div><div class="seat-num">34H</div></div>
+            <div class="seat-item"><div class="seat-name">Gabby</div><div class="seat-num">34J</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="flight-leg-line"><div class="fl-dot"></div></div>
+        <div class="flight-leg-info">
+          <div class="fl-time">9:15 <small style="font-size:1rem;opacity:.6">AM</small></div>
+          <div class="fl-airport">London Heathrow (LHR) — Terminal 5 <span style="font-size:.7rem;color:var(--text-muted)">· Fri May 15 (+1)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-layover">
+      <div class="layover-dot"></div>
+      <span><strong>~2 nights in London</strong> (Fri May 15 – Sun May 17) &nbsp;·&nbsp; Baggage: 1×23kg checked + 2 cabin pieces per person &nbsp;·&nbsp; ⚠️ Depart to Mauritius from <strong>Gatwick (LGW)</strong> — different airport, allow 90 min transfer time</span>
+    </div>
+  </div>
+
+  <!-- OUTBOUND LEG 2 -->
+  <div class="flight-card">
+    <div class="flight-hd">
+      <div>
+        <div class="flight-hd-dir">Outbound — Leg 2 of 2</div>
+        <div class="flight-hd-route">London → Mauritius</div>
+      </div>
+      <div class="flight-tag">Sun May 17</div>
+    </div>
+
+    <div class="flight-legs">
+      <div class="flight-leg">
+        <div class="flight-leg-line">
+          <div class="fl-dot"></div>
+          <div class="fl-bar"><span class="fl-plane">✈</span></div>
+        </div>
+        <div class="flight-leg-info">
+          <div class="fl-time">4:00 <small style="font-size:1rem;opacity:.6">PM</small></div>
+          <div class="fl-airport">London Gatwick (LGW) — <strong>North Terminal</strong></div>
+          <div class="fl-meta">
+            <span class="fl-chip">MK 0053</span>
+            <span class="fl-chip">Air Mauritius</span>
+            <span class="fl-chip">Airbus A359</span>
+          </div>
+          <div class="fl-dur">11h 50m direct</div>
+          <div class="seat-grid">
+            <div class="seat-item"><div class="seat-name">Marcus</div><div class="seat-num">16C</div></div>
+            <div class="seat-item"><div class="seat-name">Gabby</div><div class="seat-num">16B</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="flight-leg-line"><div class="fl-dot"></div></div>
+        <div class="flight-leg-info">
+          <div class="fl-time">6:50 <small style="font-size:1rem;opacity:.6">AM</small></div>
+          <div class="fl-airport">Sir S. Ramgoolam International (MRU), Mauritius <span style="font-size:.7rem;color:var(--text-muted)">· Mon May 18 (+1)</span></div>
+          <div class="fl-meta">
+            <span class="fl-chip">1×23kg checked</span>
+            <span class="fl-chip">1×7kg cabin each</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RETURN -->
+  <div class="flight-card">
+    <div class="flight-hd">
+      <div>
+        <div class="flight-hd-dir">Return — Leg 1 of 2</div>
+        <div class="flight-hd-route">Mauritius → London</div>
+      </div>
+      <div class="flight-tag">Fri May 22</div>
+    </div>
+
+    <div class="flight-legs">
+      <div class="flight-leg">
+        <div class="flight-leg-line">
+          <div class="fl-dot"></div>
+          <div class="fl-bar"><span class="fl-plane">✈</span></div>
+        </div>
+        <div class="flight-leg-info">
+          <div class="fl-time">8:25 <small style="font-size:1rem;opacity:.6">PM</small></div>
+          <div class="fl-airport">Sir S. Ramgoolam International (MRU)</div>
+          <div class="fl-meta">
+            <span class="fl-chip">BA 2064</span>
+            <span class="fl-chip">British Airways</span>
+            <span class="fl-chip">Boeing 777</span>
+          </div>
+          <div class="fl-dur">12h 35m direct</div>
+          <div class="seat-grid">
+            <div class="seat-item"><div class="seat-name">Marcus</div><div class="seat-num">21H</div></div>
+            <div class="seat-item"><div class="seat-name">Gabby</div><div class="seat-num">21J</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="flight-leg-line"><div class="fl-dot"></div></div>
+        <div class="flight-leg-info">
+          <div class="fl-time">6:00 <small style="font-size:1rem;opacity:.6">AM</small></div>
+          <div class="fl-airport">London Gatwick (LGW) — <strong>South Terminal</strong> <span style="font-size:.7rem;color:var(--text-muted)">· Sat May 23 (+1)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-layover">
+      <div class="layover-dot"></div>
+      <span><strong>~1 night in London</strong> (Sat May 23 – Sun May 24) &nbsp;·&nbsp; ⚠️ Depart for Austin from <strong>Heathrow T5 (LHR)</strong> — allow 90 min transfer from Gatwick (Gatwick Express + Tube or direct train to Paddington)</span>
+    </div>
+  </div>
+
+  <!-- RETURN LEG 2 -->
+  <div class="flight-card">
+    <div class="flight-hd">
+      <div>
+        <div class="flight-hd-dir">Return — Leg 2 of 2</div>
+        <div class="flight-hd-route">London → Austin</div>
+      </div>
+      <div class="flight-tag">Sun May 24</div>
+    </div>
+
+    <div class="flight-legs">
+      <div class="flight-leg">
+        <div class="flight-leg-line">
+          <div class="fl-dot"></div>
+          <div class="fl-bar"><span class="fl-plane">✈</span></div>
+        </div>
+        <div class="flight-leg-info">
+          <div class="fl-time">11:10 <small style="font-size:1rem;opacity:.6">AM</small></div>
+          <div class="fl-airport">London Heathrow (LHR) — Terminal 5</div>
+          <div class="fl-meta">
+            <span class="fl-chip">BA 0191</span>
+            <span class="fl-chip">British Airways</span>
+            <span class="fl-chip">Airbus A351</span>
+          </div>
+          <div class="fl-dur">10h 15m direct</div>
+          <div class="seat-grid">
+            <div class="seat-item"><div class="seat-name">Marcus</div><div class="seat-num">33H</div></div>
+            <div class="seat-item"><div class="seat-name">Gabby</div><div class="seat-num">33J</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="flight-leg-line"><div class="fl-dot"></div></div>
+        <div class="flight-leg-info">
+          <div class="fl-time">3:25 <small style="font-size:1rem;opacity:.6">PM</small></div>
+          <div class="fl-airport">Austin–Bergstrom International (AUS) <span style="font-size:.7rem;color:var(--text-muted)">· Sun May 24</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mauritius Transfer -->
+  <div class="transfer-card">
+    <div class="transfer-title">🚗 Mauritius Airport Transfer</div>
+    <div class="transfer-row">
+      <div class="transfer-lbl">Route</div>
+      <div class="transfer-val">MRU Airport → One&amp;Only Le Saint Géran, Belle Mare Peninsula (east coast)</div>
+    </div>
+    <div class="transfer-row">
+      <div class="transfer-lbl">By Road</div>
+      <div class="transfer-val">~1 hour · Provided by Flexera on arrival (May 18) and departure (May 22)</div>
+    </div>
+    <div class="transfer-row">
+      <div class="transfer-lbl">By Air</div>
+      <div class="transfer-val">~10 min helicopter option — ask Flexera/concierge if arranging</div>
+    </div>
+    <div class="transfer-row">
+      <div class="transfer-lbl">Check-in</div>
+      <div class="transfer-val">2:00 PM · Check-out 12:00 PM</div>
+    </div>
+    <div class="transfer-row">
+      <div class="transfer-lbl">Resort Tel</div>
+      <div class="transfer-val">+230 401 1888</div>
+    </div>
+    <div class="note-box">
+      💡 Roundtrip airport transfers are included by Flexera. The resort is on the east coast — ~1 hour from the airport through the north or south route. Grab Mauritian Rupees at the airport ATM. Hotels and larger restaurants take cards.
+    </div>
+  </div>
+
+  <!-- London logistics note -->
+  <div class="transfer-card">
+    <div class="transfer-title">🇬🇧 London Airport Logistics</div>
+    <div class="transfer-row">
+      <div class="transfer-lbl">Outbound</div>
+      <div class="transfer-val">Arrive LHR T5 (May 15) → depart LGW North (May 17). LHR ↔ LGW = ~1h by Gatwick Express (St Pancras → LGW, ~30 min, ~£20) or National Rail.</div>
+    </div>
+    <div class="transfer-row">
+      <div class="transfer-lbl">Return</div>
+      <div class="transfer-val">Arrive LGW South (May 23) → depart LHR T5 (May 24). Allow 90 min minimum. Gatwick Express → Victoria, then Heathrow Express or Elizabeth line.</div>
+    </div>
+    <div class="transfer-row">
+      <div class="transfer-lbl">Hotel tip</div>
+      <div class="transfer-val">Central London (Paddington / South Kensington / Victoria area) works well for both airports.</div>
+    </div>
+    <div class="note-box">
+      💡 <strong>UK ETA</strong> — Required for both layovers. Apply at <strong>gov.uk/eta</strong> before flying. Free, takes 5 minutes. Linked to your passport. No ETA = denied boarding.
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ ITINERARY -->
+<section id="s-itinerary" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Day by Day</div>
+    <h2 class="section-title">The Itinerary</h2>
+    <p class="section-sub">May 14–24, 2026 · Tap any day to expand &nbsp;·&nbsp; <span style="color:#2F6B2D;font-weight:500;">✦ Green = Flexera hosted</span></p>
+  </div>
+
+  <!-- Day 1 -->
+  <div class="day-card dt-travel">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">14</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Departure Day</div>
+        <div class="day-date">Thursday, May 14 · Austin</div>
+      </div>
+      <div class="day-badge">Travel</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Daytime</div>
+        <div class="time-content">
+          <div class="time-title">Final packing, errands, prep</div>
+          <div class="time-desc">Finish packing, confirm UK ETA, print confirmations. Check bag weights — 23kg limit each. Light day.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Afternoon</div>
+        <div class="time-content">
+          <div class="time-title">Head to AUS — arrive 3:00 PM</div>
+          <div class="time-desc">Allow 2.5–3 hours. British Airways check-in desk. International security can be slow on Thursdays.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Evening</div>
+        <div class="time-content">
+          <div class="time-title">BA 0190 departs 5:55 PM</div>
+          <div class="time-desc">Overnight transatlantic flight. Arrive London Heathrow T5 tomorrow morning at 9:15 AM (Friday May 15). Noise-canceling headphones, melatonin, and a good movie.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-card dt-london">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">15</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Arrive London</div>
+        <div class="day-date">Friday, May 15 · London</div>
+      </div>
+      <div class="day-badge">London</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Morning</div>
+        <div class="time-content">
+          <div class="time-title">Arrive LHR T5 at 9:15 AM</div>
+          <div class="time-desc">Immigration, collect bags, hop the Heathrow Express to Paddington (~15 min, ~£37). Check into hotel. Freshen up.</div>
+          <div class="todo-row">⚠️ <strong>Hotel not booked yet</strong> — need 1 night (or 2-night stay if combining with Sat). Recommended area: Notting Hill or King's Cross. See suggestions below.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Afternoon</div>
+        <div class="time-content">
+          <div class="time-title">Daytime plans TBD <span class="todo-badge">⚠ To Do</span></div>
+          <div class="time-desc">Arrive ~10:30 AM after immigration and Heathrow Express. Options: rest and recharge at hotel, city bike tour (Hyde Park → Buckingham Palace → Tower Bridge → Thames), or wander the Notting Hill area if staying there.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">5:00 PM</div>
+        <div class="time-content">
+          <div class="time-title">Dinner — Dishoom King's Cross <span class="confirmed-badge">✓ Confirmed</span></div>
+          <div class="time-desc">Reservation at <strong>5:00 PM BST</strong>. The legendary original London chicken tikka masala. Also: black dal makhani, pau bhaji, house chai. Don't be late — they'll release the table.</div>
+          <div class="confirmed-row">
+            ✓ <strong>Dishoom King's Cross</strong> — 5 Stable Street, King's Cross, London N1C 4AB · 5:00 PM BST
+          </div>
+          <div class="meal-chips">
+            <span class="meal-chip">🍛 Dinner · Dishoom King's Cross · 5:00 PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Stay</div>
+        <div class="time-content">
+          <div class="time-title">Where to stay — Outbound Layover</div>
+          <div class="hotel-rec-block">
+            <div class="hotel-rec-title">🏨 Outbound: 2 nights (Fri May 15 – Sun May 17)</div>
+            <div class="hotel-rec-desc">You're having dinner at Dishoom King's Cross (Fri) and The Ledbury in Notting Hill (Sat). Best areas:</div>
+            <div class="hotel-rec-area">⭐ Notting Hill / Bayswater — Top Pick</div>
+            <div class="hotel-rec-desc">Walking distance to The Ledbury Sat night. Easy tube to King's Cross Fri (~30 min Victoria line). Georgian streets, great neighbourhood feel. Perfect for an Airbnb.</div>
+            <div class="hotel-option">
+              <div class="hotel-option-name"><strong>The Laslett</strong> — 8 Pembridge Gardens, Notting Hill. Stylish boutique hotel, walking distance to The Ledbury.</div>
+              <div class="hotel-option-price">~$250–350/nt</div>
+            </div>
+            <div class="hotel-option">
+              <div class="hotel-option-name"><strong>Airbnb</strong> — Notting Hill garden flat or mews house. Search "Notting Hill entire flat, 2 nights May 15–17".</div>
+              <div class="hotel-option-price">~$200–300/nt</div>
+            </div>
+            <div class="hotel-rec-area">King's Cross / Islington</div>
+            <div class="hotel-rec-desc">Right next to Dishoom Friday. Excellent transport links. Less charm than Notting Hill but very convenient.</div>
+            <div class="hotel-option">
+              <div class="hotel-option-name"><strong>The Standard London</strong> — 10 Argyle Street, King's Cross. Cool design hotel steps from Dishoom.</div>
+              <div class="hotel-option-price">~$200–300/nt</div>
+            </div>
+            <div class="hotel-rec-area">Marylebone / Fitzrovia</div>
+            <div class="hotel-rec-desc">Dead centre. ~20 min to both dinners. Stylish, walkable, great cafés.</div>
+            <div class="hotel-option">
+              <div class="hotel-option-name"><strong>Airbnb</strong> — Marylebone or Fitzrovia apartment. Good central fallback.</div>
+              <div class="hotel-option-price">~$180–260/nt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-card dt-london">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">16</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Full London Day</div>
+        <div class="day-date">Saturday, May 16 · London</div>
+      </div>
+      <div class="day-badge">London</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Morning</div>
+        <div class="time-content">
+          <div class="time-title">Borough Market — strongly recommended <span class="todo-badge">⚠ Plan This</span></div>
+          <div class="time-desc">London's best food market, at its peak on Saturdays. Artisan cheese, charcuterie, fresh bread, pies, global street food. Walk across London Bridge after for a South Bank wander.</div>
+          <div class="todo-row">⚠️ <strong>Hotel</strong> — confirm this is a 2-night stay (May 15–17) rather than booking separately for each night. Same hotel as Friday simplifies things.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">🧀 Borough Market · Saturday morning</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Afternoon</div>
+        <div class="time-content">
+          <div class="time-title">Afternoon plans TBD <span class="todo-badge">⚠ To Do</span></div>
+          <div class="time-desc">Options: Notting Hill neighbourhood walk (Portobello Road Market is Saturdays too), Tate Modern on the South Bank (free, world-class), National Gallery on Trafalgar Square, or a Thames River walk from Westminster to Tower Bridge.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">6:00 PM</div>
+        <div class="time-content">
+          <div class="time-title">Dinner — The Ledbury ⭐⭐⭐ <span class="confirmed-badge">✓ Confirmed</span></div>
+          <div class="time-desc">Three Michelin stars. Chef Brett Graham, one of the finest restaurants in the UK. Seasonal British ingredients sourced from their own deer, Jersey cows, and Iberian pigs. Opened 2005, earned 3 stars in 2024. An exceptional meal.</div>
+          <div class="confirmed-row">
+            ✓ <strong>The Ledbury</strong> — 127 Ledbury Road, Notting Hill, London W11 2AQ · 6:00 PM BST<br>
+            <span style="font-size:0.72rem;opacity:0.8;">3 Michelin Stars · Chef Brett Graham · Smart casual dress</span>
+          </div>
+          <div class="meal-chips">
+            <span class="meal-chip">⭐⭐⭐ The Ledbury · Notting Hill · 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-card dt-travel">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">17</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">London → Mauritius</div>
+        <div class="day-date">Sunday, May 17 · London → LGW</div>
+      </div>
+      <div class="day-badge">Transit</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Morning</div>
+        <div class="time-content">
+          <div class="time-title">Check out of London hotel</div>
+          <div class="time-desc">Grab a coffee and a proper English breakfast if time allows. Pub near the hotel or a café.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">☕ Breakfast near hotel</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Midday</div>
+        <div class="time-content">
+          <div class="time-title">Transfer to Gatwick North Terminal</div>
+          <div class="time-desc">Gatwick Express from Victoria Station (~30 min). Arrive by 1:30 PM for the 4:00 PM flight. Air Mauritius check-in at the North Terminal.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Afternoon</div>
+        <div class="time-content">
+          <div class="time-title">MK 0053 departs 4:00 PM</div>
+          <div class="time-desc">11h 50m to paradise. Arrive Mauritius Monday 6:50 AM. Flat-beds, time zones converging. Sleep as much as possible.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day-card dt-arrival">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">18</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Arrive — Le Saint Géran</div>
+        <div class="day-date">Monday, May 18 · Mauritius</div>
+      </div>
+      <div class="day-badge">Arrival</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Early AM</div>
+        <div class="time-content">
+          <div class="time-title">Land at MRU 6:50 AM</div>
+          <div class="time-desc">Immigration, baggage, customs. Flexera-arranged transfer waiting in arrivals hall. ~1 hour drive east to Belle Mare Peninsula. First look at the Indian Ocean.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Midday</div>
+        <div class="time-content">
+          <div class="time-title">Resort arrival &amp; check-in (2:00 PM)</div>
+          <div class="time-desc">Welcome coconut. Store bags if room isn't ready — use the beach and pool from the moment you arrive. L'Artisan bakery for morning coffee and pastries.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">☕ L'Artisan bakery</span>
+            <span class="meal-chip">🍹 Pool bar lunch</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Evening</div>
+        <div class="time-content">
+          <div class="time-title">Welcome Reception <span class="flexera-badge">✦ Flexera Hosted</span></div>
+          <div class="time-desc">President's Club welcome drinks and reception at the hotel. Meet fellow winners. Resort casual attire.</div>
+          <div class="flexera-row">✦ Flexera President's Club event — included</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day-card dt-beach">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">19</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Resort Day &amp; Group Activity</div>
+        <div class="day-date">Tuesday, May 19 · Mauritius</div>
+      </div>
+      <div class="day-badge">Resort</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Morning</div>
+        <div class="time-content">
+          <div class="time-title">Breakfast at leisure</div>
+          <div class="time-desc">La Terrasse breakfast buffet — tropical fruits, live stations, fresh pastries. First real morning at the resort. Walk the peninsula beach before the sun gets high.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">🥭 Breakfast · La Terrasse</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Daytime</div>
+        <div class="time-content">
+          <div class="time-title">Flexera Group Activity + Lunch <span class="flexera-badge">✦ Hosted</span></div>
+          <div class="time-desc">Flexera-organized group activity and hosted lunch. Details TBD / communicated by Flexera on arrival. Stay tuned for the brief.</div>
+          <div class="flexera-row">✦ Flexera President's Club event — activity and lunch included</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Evening</div>
+        <div class="time-content">
+          <div class="time-title">Dinner on your own — La Pointe or Le Badamier</div>
+          <div class="time-desc"><strong>Note: Tapasake is closed on Tuesdays</strong> — save it for Wednesday or another free evening. Tonight: <strong>La Pointe</strong> (beachfront Creole, catch of the day, feet in the sand) or <strong>Le Badamier</strong> (authentic Mauritian cuisine under trees, freshly caught seafood). Both are excellent and no reservation needed.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">🐟 La Pointe or Le Badamier</span>
+            <span class="meal-chip" style="background:#FFF3D6;border-color:#F0CC6A;color:#7A5200;">Tapasake closed Tuesdays</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day-card dt-excursion">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">20</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Golf &amp; Spa Day</div>
+        <div class="day-date">Wednesday, May 20 · Mauritius</div>
+      </div>
+      <div class="day-badge">Golf + Spa</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Morning</div>
+        <div class="time-content">
+          <div class="time-title">Breakfast at leisure</div>
+          <div class="time-desc">Early start for Marcus — fuel up at La Terrasse or grab something from L'Artisan. Gabby: slow morning, coffee on the terrace.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">☕ L'Artisan / La Terrasse</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Daytime</div>
+        <div class="time-content">
+          <div class="time-title">Marcus — Golf at Legend Course <span class="flexera-badge">✦ Hosted</span></div>
+          <div class="time-desc">Par-72 championship course designed by Hugh Baiocchi. Water hazards, sea breezes, and the iconic 17th hole — a par-3 over a coastal inlet. One of the best courses in the Indian Ocean region. Covered by Flexera as Marcus's selected activity.</div>
+          <div class="flexera-row">✦ Golf included by Flexera as selected activity</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Daytime</div>
+        <div class="time-content">
+          <div class="time-title">Gabby — Guerlain Spa</div>
+          <div class="time-desc">Mauritius' only Guerlain Spa. Options: Imperial Relaxing Massage (60 min) or Tailor Made Facial. Spa access all day — hammam, hydrotherapy pool, relaxation lounge. Or spend the day at the pool / beach.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">💆 Guerlain Spa or beach/pool</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Evening</div>
+        <div class="time-content">
+          <div class="time-title">Hosted Dinner <span class="flexera-badge">✦ Flexera Hosted</span></div>
+          <div class="time-desc">Flexera-hosted dinner event in the evening. Details TBD — likely at the resort or a special venue. Resort casual/smart casual attire.</div>
+          <div class="flexera-row">✦ Flexera President's Club event — dinner included</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 8 -->
+  <div class="day-card dt-water">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">21</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Catamaran &amp; Awards Dinner</div>
+        <div class="day-date">Thursday, May 21 · Mauritius</div>
+      </div>
+      <div class="day-badge">Catamaran</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Early AM</div>
+        <div class="time-content">
+          <div class="time-title">Breakfast before departure</div>
+          <div class="time-desc">Full La Terrasse breakfast — you need fuel for a full day on the water.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">🍳 Breakfast · La Terrasse</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">8:45 AM</div>
+        <div class="time-content">
+          <div class="time-title">Catamaran Cruise departs <span class="flexera-badge">✦ Hosted</span></div>
+          <div class="time-desc">Full-day catamaran along the east coast, navigating to Île aux Cerfs. Jungle Juice cocktails, Mauritian coffee, and a BBQ lunch on board. Snorkeling in open water. Returns ~4:00 PM. Both Marcus and Gabby.</div>
+          <div class="flexera-row">✦ Flexera included activity — 8:45 AM – 4:00 PM · BBQ lunch on board</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Evening</div>
+        <div class="time-content">
+          <div class="time-title">President's Club Awards Dinner <span class="flexera-badge">✦ Hosted</span></div>
+          <div class="time-desc">The main event. Flexera awards ceremony dinner at the hotel. Dress up — smart casual/resort formal. Recognition, speeches, celebration. The capstone night of the trip.</div>
+          <div class="flexera-row">✦ Flexera Awards Dinner — formal-ish, smart casual/resort attire</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 9 -->
+  <div class="day-card dt-depart">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">22</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Last Morning &amp; Departure</div>
+        <div class="day-date">Friday, May 22 · Mauritius → London</div>
+      </div>
+      <div class="day-badge">Depart</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Morning</div>
+        <div class="time-content">
+          <div class="time-title">One last sunrise on the peninsula</div>
+          <div class="time-desc">Set the alarm. Walk the beach barefoot. Last swim in the Indian Ocean. Resort breakfast.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">🌅 Final breakfast at resort</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Midday</div>
+        <div class="time-content">
+          <div class="time-title">Check out by 12:00 PM</div>
+          <div class="time-desc">Bags down, pool access usually extended for departing guests. Ask Flexera/concierge. Grab duty-free rum in departures. Pick up Mauritian vanilla if you can.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Evening</div>
+        <div class="time-content">
+          <div class="time-title">Flexera transfer to MRU airport</div>
+          <div class="time-desc">BA 2064 departs 8:25 PM. Transfer provided by Flexera. Arrive airport ~5:30 PM. 12h 35m overnight flight to London Gatwick. Land Saturday 6:00 AM.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 10 -->
+  <div class="day-card dt-london">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">23</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">London Return Stop</div>
+        <div class="day-date">Saturday, May 23 · London</div>
+      </div>
+      <div class="day-badge">London</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Early AM</div>
+        <div class="time-content">
+          <div class="time-title">Arrive LGW South Terminal, 6:00 AM</div>
+          <div class="time-desc">Gatwick Express from South Terminal to Victoria Station (~30 min, ~£20). Check into hotel — early check-in may cost extra, or leave bags and grab breakfast nearby. Rest.</div>
+          <div class="todo-row">⚠️ <strong>Hotel not booked yet</strong> — 1 night (Sat May 23). Arriving Gatwick 6am, departing Heathrow T5 11:10am Sunday. Central or west London ideal. See hotel suggestions below.</div>
+          <div class="todo-row">⚠️ <strong>Gatwick → Heathrow transfer Sunday</strong> — depart hotel by 8:30am at the latest. Heathrow Express from Paddington (~15 min, £37) or Elizabeth line. Do not cut this close.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Afternoon</div>
+        <div class="time-content">
+          <div class="time-title">Slow day — South Bank, pub lunch, or neighbourhood walk</div>
+          <div class="time-desc">Low-key Saturday. Borough Market is open (Saturdays are best). Walk the South Bank: Tate Modern, Shakespeare's Globe, Southwark. Or just find a great pub and sit outside if the weather is kind.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">🍺 Pub lunch · somewhere good</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Evening</div>
+        <div class="time-content">
+          <div class="time-title">Dinner — not yet planned <span class="todo-badge">⚠ To Do</span></div>
+          <div class="time-desc">Options: <strong>1890 by Gordon Ramsay at The Savoy</strong> (Michelin, £175pp dinner) · <strong>Bonheur by Matt Abé</strong> (2-Michelin-star, Mayfair) · <strong>RGR High</strong> (12-seater, 60th floor, panoramic London views, Michelin 2026) · Or a classic London pub dinner — no shame in that after 12 days of extraordinary eating.</div>
+          <div class="todo-row">⚠️ <strong>Dinner not booked</strong> — decide which Michelin spot you didn't hit on the outbound layover, or keep it casual. Both 1890 and Bonheur need advance reservations.</div>
+          <div class="meal-chips">
+            <span class="meal-chip">⭐ 1890 / Bonheur / RGR High</span>
+          </div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">Stay</div>
+        <div class="time-content">
+          <div class="time-title">Where to stay — Return Layover</div>
+          <div class="hotel-rec-block">
+            <div class="hotel-rec-title">🏨 Return: 1 night (Sat May 23 – Sun May 24)</div>
+            <div class="hotel-rec-desc">Arriving LGW 6am, departing LHR T5 11:10am Sunday — central or west London is best for easy Heathrow access.</div>
+            <div class="hotel-rec-area">⭐ Kensington / Earl's Court — Top Pick</div>
+            <div class="hotel-rec-desc">15 min from Heathrow on the Piccadilly line. Nice area, walkable, low stress Sunday morning.</div>
+            <div class="hotel-option">
+              <div class="hotel-option-name"><strong>Any well-rated Kensington hotel</strong> — Copthorne Tara, NH London Kensington, or similar.</div>
+              <div class="hotel-option-price">~$150–220/nt</div>
+            </div>
+            <div class="hotel-rec-area">Paddington — Most Practical</div>
+            <div class="hotel-rec-desc">Heathrow Express from Paddington to LHR T5 is 15 min, £37. Zero stress for the Sunday morning flight.</div>
+            <div class="hotel-option">
+              <div class="hotel-option-name"><strong>Any 4-star Paddington hotel</strong> — Hilton London Paddington, Park Grand, or similar.</div>
+              <div class="hotel-option-price">~$150–200/nt</div>
+            </div>
+            <div class="hotel-rec-area">Budget / Design Option</div>
+            <div class="hotel-option">
+              <div class="hotel-option-name"><strong>citizenM Shoreditch or Southwark</strong> — affordable, stylish, compact. Good transport links.</div>
+              <div class="hotel-option-price">~$130–180/nt</div>
+            </div>
+            <div class="hotel-rec-area">Same Notting Hill hotel as outbound?</div>
+            <div class="hotel-rec-desc">Simplifies logistics if you already have a good relationship with the property. Still easy Heathrow access via Tube.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 11 -->
+  <div class="day-card dt-depart">
+    <div class="day-hd">
+      <div class="day-num"><span class="day-num-lbl">May</span><span class="day-num-val">24</span></div>
+      <div class="day-hd-info">
+        <div class="day-name">Homeward Bound</div>
+        <div class="day-date">Sunday, May 24 · London → Austin</div>
+      </div>
+      <div class="day-badge">Home</div>
+      <svg class="day-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="time-row">
+        <div class="time-lbl">Morning</div>
+        <div class="time-content">
+          <div class="time-title">Transfer to LHR Terminal 5 — depart by 8:30 AM</div>
+          <div class="time-desc">Hotel → Heathrow: Elizabeth Line or Heathrow Express from Paddington. Check-in by 9:00 AM for the 11:10 AM flight. BA 0191, seats 33H / 33J.</div>
+        </div>
+      </div>
+      <div class="time-row">
+        <div class="time-lbl">11:10 AM</div>
+        <div class="time-content">
+          <div class="time-title">BA 0191 departs for Austin</div>
+          <div class="time-desc">10h 15m flight. Arrive AUS 3:25 PM Sunday. Home. Trip complete.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ PACKING -->
+<section id="s-packing" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Don't Forget</div>
+    <h2 class="section-title">Packing List</h2>
+    <p class="section-sub">Tap items to check them off — state saves automatically</p>
+  </div>
+
+  <div class="pack-progress">
+    <div class="pack-progress-text"><strong id="pack-count">0 / 47</strong> packed</div>
+    <div class="pack-bar-track">
+      <div class="pack-bar-fill" id="pack-bar"></div>
+    </div>
+  </div>
+
+  <!-- Travel / Transit -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>✈</span> Travel &amp; Transit
+      <span class="pack-cat-count" id="cc-transit">0 / 7</span>
+    </div>
+    <div class="pack-list" data-cat="transit">
+      <div class="pack-item" data-id="p1"><div class="pack-cb"></div><div class="pack-label">Travel outfit — comfortable layers for long haul</div></div>
+      <div class="pack-item" data-id="p2"><div class="pack-cb"></div><div class="pack-label">Passport</div><div class="pack-note">valid past Nov 17 '26</div></div>
+      <div class="pack-item" data-id="p3"><div class="pack-cb"></div><div class="pack-label">UK ETA confirmation (both)</div><div class="pack-note">gov.uk/eta</div></div>
+      <div class="pack-item" data-id="p4"><div class="pack-cb"></div><div class="pack-label">Neck pillow</div></div>
+      <div class="pack-item" data-id="p5"><div class="pack-cb"></div><div class="pack-label">Noise-canceling AirPods / headphones</div><div class="pack-note">long flights</div></div>
+      <div class="pack-item" data-id="p6"><div class="pack-cb"></div><div class="pack-label">UK Type G + Type C adapter</div><div class="pack-note">UK &amp; Mauritius</div></div>
+      <div class="pack-item" data-id="p7"><div class="pack-cb"></div><div class="pack-label">Compression socks</div><div class="pack-note">long-haul flights</div></div>
+    </div>
+  </div>
+
+  <!-- Tech & Gear -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>📱</span> Tech &amp; Gear
+      <span class="pack-cat-count" id="cc-tech">0 / 6</span>
+    </div>
+    <div class="pack-list" data-cat="tech">
+      <div class="pack-item" data-id="p8"><div class="pack-cb"></div><div class="pack-label">AirPods (earbuds)</div></div>
+      <div class="pack-item" data-id="p9"><div class="pack-cb"></div><div class="pack-label">Meta smart glasses</div></div>
+      <div class="pack-item" data-id="p10"><div class="pack-cb"></div><div class="pack-label">Whoop fitness tracker + charger</div></div>
+      <div class="pack-item" data-id="p11"><div class="pack-cb"></div><div class="pack-label">Phone chargers × 2</div></div>
+      <div class="pack-item" data-id="p12"><div class="pack-cb"></div><div class="pack-label">Extra battery pack</div></div>
+      <div class="pack-item" data-id="p13"><div class="pack-cb"></div><div class="pack-label">Phone gimbal (video)</div></div>
+    </div>
+  </div>
+
+  <!-- Beach & Resort -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>🏖</span> Beach &amp; Resort
+      <span class="pack-cat-count" id="cc-beach">0 / 6</span>
+    </div>
+    <div class="pack-list" data-cat="beach">
+      <div class="pack-item" data-id="p14"><div class="pack-cb"></div><div class="pack-label">Bathing suits</div><div class="pack-note">× 3</div></div>
+      <div class="pack-item" data-id="p15"><div class="pack-cb"></div><div class="pack-label">Board shorts</div></div>
+      <div class="pack-item" data-id="p16"><div class="pack-cb"></div><div class="pack-label">Flip flops / sandals</div></div>
+      <div class="pack-item" data-id="p17"><div class="pack-cb"></div><div class="pack-label">Sunglasses</div></div>
+      <div class="pack-item" data-id="p18"><div class="pack-cb"></div><div class="pack-label">Hat (sun protection)</div></div>
+      <div class="pack-item" data-id="p19"><div class="pack-cb"></div><div class="pack-label">Reef-safe sunscreen</div></div>
+    </div>
+  </div>
+
+  <!-- Clothing Casual -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>👕</span> Clothing — Casual
+      <span class="pack-cat-count" id="cc-casual">0 / 4</span>
+    </div>
+    <div class="pack-list" data-cat="casual">
+      <div class="pack-item" data-id="p20"><div class="pack-cb"></div><div class="pack-label">T-shirts</div><div class="pack-note">× 5–6</div></div>
+      <div class="pack-item" data-id="p21"><div class="pack-cb"></div><div class="pack-label">Gym shorts</div><div class="pack-note">× 2</div></div>
+      <div class="pack-item" data-id="p22"><div class="pack-cb"></div><div class="pack-label">Gym shirts</div><div class="pack-note">× 2</div></div>
+      <div class="pack-item" data-id="p23"><div class="pack-cb"></div><div class="pack-label">Microfiber towels</div><div class="pack-note">× 2</div></div>
+    </div>
+  </div>
+
+  <!-- Clothing Smart Casual -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>👔</span> Clothing — Smart Casual / Evenings
+      <span class="pack-cat-count" id="cc-smart">0 / 5</span>
+    </div>
+    <div class="pack-list" data-cat="smart">
+      <div class="pack-item" data-id="p24"><div class="pack-cb"></div><div class="pack-label">Nicer shirts</div><div class="pack-note">× 3–4 (dinners, Awards)</div></div>
+      <div class="pack-item" data-id="p25"><div class="pack-cb"></div><div class="pack-label">Nice shorts</div><div class="pack-note">× 1–2</div></div>
+      <div class="pack-item" data-id="p26"><div class="pack-cb"></div><div class="pack-label">Pants (1 pair)</div></div>
+      <div class="pack-item" data-id="p27"><div class="pack-cb"></div><div class="pack-label">Belt</div></div>
+      <div class="pack-item" data-id="p28"><div class="pack-cb"></div><div class="pack-label">Nice shoes</div><div class="pack-note">evenings + London</div></div>
+    </div>
+  </div>
+
+  <!-- London Layers -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>🧥</span> Clothing — London Layers
+      <span class="pack-cat-count" id="cc-london">0 / 2</span>
+    </div>
+    <div class="pack-list" data-cat="london">
+      <div class="pack-item" data-id="p29"><div class="pack-cb"></div><div class="pack-label">Light jacket or blazer</div><div class="pack-note">London May: 55–65°F</div></div>
+      <div class="pack-item" data-id="p30"><div class="pack-cb"></div><div class="pack-label">Warmer layer / pullover</div></div>
+    </div>
+  </div>
+
+  <!-- Undergarments -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>🧦</span> Undergarments &amp; Basics
+      <span class="pack-cat-count" id="cc-under">0 / 3</span>
+    </div>
+    <div class="pack-list" data-cat="under">
+      <div class="pack-item" data-id="p31"><div class="pack-cb"></div><div class="pack-label">Underwear</div><div class="pack-note">× 8–9 pairs</div></div>
+      <div class="pack-item" data-id="p32"><div class="pack-cb"></div><div class="pack-label">Socks</div><div class="pack-note">× 6–7 pairs</div></div>
+      <div class="pack-item" data-id="p33"><div class="pack-cb"></div><div class="pack-label">Condoms</div></div>
+    </div>
+  </div>
+
+  <!-- Health & Supplements -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>💊</span> Health &amp; Supplements
+      <span class="pack-cat-count" id="cc-health">0 / 8</span>
+    </div>
+    <div class="pack-list" data-cat="health">
+      <div class="pack-item" data-id="p34"><div class="pack-cb"></div><div class="pack-label">LMNT electrolytes</div></div>
+      <div class="pack-item" data-id="p35"><div class="pack-cb"></div><div class="pack-label">Redmond Real Salt</div></div>
+      <div class="pack-item" data-id="p36"><div class="pack-cb"></div><div class="pack-label">Daily supplements / vitamins</div></div>
+      <div class="pack-item" data-id="p37"><div class="pack-cb"></div><div class="pack-label">Mouth tape</div></div>
+      <div class="pack-item" data-id="p38"><div class="pack-cb"></div><div class="pack-label">Nose strips</div></div>
+      <div class="pack-item" data-id="p39"><div class="pack-cb"></div><div class="pack-label">Travel sound machine</div></div>
+      <div class="pack-item" data-id="p40"><div class="pack-cb"></div><div class="pack-label">Melatonin</div><div class="pack-note">critical — 7h time diff</div></div>
+      <div class="pack-item" data-id="p41"><div class="pack-cb"></div><div class="pack-label">Pepto-Bismol / Imodium / basic meds</div></div>
+    </div>
+  </div>
+
+  <!-- Documents -->
+  <div class="pack-cat">
+    <div class="pack-cat-title">
+      <span>🛂</span> Documents &amp; Essentials
+      <span class="pack-cat-count" id="cc-docs">0 / 6</span>
+    </div>
+    <div class="pack-list" data-cat="docs">
+      <div class="pack-item" data-id="p42"><div class="pack-cb"></div><div class="pack-label">Passport (valid past Nov 17, 2026)</div></div>
+      <div class="pack-item" data-id="p43"><div class="pack-cb"></div><div class="pack-label">UK ETA confirmation</div><div class="pack-note">both travelers</div></div>
+      <div class="pack-item" data-id="p44"><div class="pack-cb"></div><div class="pack-label">Travel insurance documentation</div></div>
+      <div class="pack-item" data-id="p45"><div class="pack-cb"></div><div class="pack-label">Reservation codes: DFIOQN / A59GZ5</div></div>
+      <div class="pack-item" data-id="p46"><div class="pack-cb"></div><div class="pack-label">Bilt Obsidian card</div></div>
+      <div class="pack-item" data-id="p47"><div class="pack-cb"></div><div class="pack-label">Chase Sapphire Preferred card</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ WISHLIST -->
+<section id="s-wishlist" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Must Do</div>
+    <h2 class="section-title">Restaurants &amp; Experiences</h2>
+    <p class="section-sub">Tap to mark as done — covers both Mauritius and London</p>
+  </div>
+
+  <div class="wish-section-lbl">🏝 Mauritius · One&Only Le Saint Géran</div>
+  <div class="wish-grid">
+    <div class="wish-card" data-id="w1">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🍣</div>
+      <div class="wish-type">Resort · Japanese Fusion</div>
+      <div class="wish-name">Tapasake</div>
+      <div class="wish-desc">On stilts over the lagoon. Hot-stone dishes, sashimi, ocean views at night. Do not skip. Book ahead.</div>
+    </div>
+    <div class="wish-card" data-id="w2">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🥩</div>
+      <div class="wish-type">Resort · Steakhouse</div>
+      <div class="wish-name">PRIME</div>
+      <div class="wish-desc">Contemporary steakhouse — Mauritius' first upmarket cut. Regularly hosts Michelin-starred guest chefs.</div>
+    </div>
+    <div class="wish-card" data-id="w3">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🐟</div>
+      <div class="wish-type">Resort · Creole</div>
+      <div class="wish-name">La Pointe</div>
+      <div class="wish-desc">Beachfront. Feet in the sand, catch of the day, ocean breeze. The most Mauritius restaurant on the resort.</div>
+    </div>
+    <div class="wish-card" data-id="w4">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🍳</div>
+      <div class="wish-type">Resort · All-Day</div>
+      <div class="wish-name">La Terrasse</div>
+      <div class="wish-desc">Breakfast daily — tropical fruit buffet, live stations, freshly squeezed juices. Pool terrace views.</div>
+    </div>
+    <div class="wish-card" data-id="w5">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">☕</div>
+      <div class="wish-type">Resort · Bakery</div>
+      <div class="wish-name">L'Artisan</div>
+      <div class="wish-desc">Artisan bakery and coffee shop. Morning ritual — flat white and a pastry before the beach. Non-negotiable.</div>
+    </div>
+    <div class="wish-card" data-id="w6">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🌿</div>
+      <div class="wish-type">Resort · Mauritian</div>
+      <div class="wish-name">Le Badamier</div>
+      <div class="wish-desc">Freshly caught seafood under trees overlooking the ocean. Authentic Mauritian flavors for lunch.</div>
+    </div>
+    <div class="wish-card" data-id="w7">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🌊</div>
+      <div class="wish-type">Resort · Italian</div>
+      <div class="wish-name">RIVA</div>
+      <div class="wish-desc">Italian Riviera-inspired beachfront pool club. Light plates, cocktails, the most beautiful pool view.</div>
+    </div>
+    <div class="wish-card" data-id="w8">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🔥</div>
+      <div class="wish-type">Resort · Private</div>
+      <div class="wish-name">Glampfire Tipi Dinner</div>
+      <div class="wish-desc">Private beach dining under a tipi with bonfire. Ask the concierge to arrange. Wildly romantic.</div>
+    </div>
+  </div>
+
+  <div class="wish-section-lbl">🇬🇧 London · Restaurants &amp; Experiences</div>
+  <div class="wish-grid">
+    <div class="wish-card" data-id="w9">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🍛</div>
+      <div class="wish-type">Restaurant · Curry</div>
+      <div class="wish-name">Dishoom</div>
+      <div class="wish-desc">The London original. Chicken tikka masala — this is the dish. Black dal, chai. Queue early or book. Can't miss.</div>
+    </div>
+    <div class="wish-card" data-id="w10">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">⭐</div>
+      <div class="wish-type">Restaurant · Michelin</div>
+      <div class="wish-name">1890 by Gordon Ramsay</div>
+      <div class="wish-desc">Michelin starred inside The Savoy. Lunch tasting ~£90, dinner ~£175. Book well ahead. Stunning room.</div>
+    </div>
+    <div class="wish-card" data-id="w11">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">⭐⭐</div>
+      <div class="wish-type">Restaurant · 2-Michelin</div>
+      <div class="wish-name">Bonheur by Matt Abé</div>
+      <div class="wish-desc">Brand new 2-Michelin-star. Took over the Le Gavroche site in Mayfair. Classical French technique, incredible buzz.</div>
+    </div>
+    <div class="wish-card" data-id="w12">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🏙</div>
+      <div class="wish-type">Restaurant · Views</div>
+      <div class="wish-name">RGR High · 60th Floor</div>
+      <div class="wish-desc">12-seater at 22 Bishopsgate's 60th floor. Panoramic London views, new Michelin star 2026. Intimate and dramatic.</div>
+    </div>
+    <div class="wish-card" data-id="w13">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🧀</div>
+      <div class="wish-type">Experience · Market</div>
+      <div class="wish-name">Borough Market</div>
+      <div class="wish-desc">London's best food market. Saturdays are peak. Cheese, charcuterie, pies, international stalls. Must do.</div>
+    </div>
+    <div class="wish-card" data-id="w14">
+      <div class="wish-cb"></div>
+      <div class="wish-emoji">🚲</div>
+      <div class="wish-type">Experience · City</div>
+      <div class="wish-name">City Bike Tour</div>
+      <div class="wish-desc">Hyde Park → Buckingham Palace → Westminster → Tower Bridge → Thames Path. Best way to see London fast.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ BUDGET -->
+<section id="s-budget" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">Finance</div>
+    <h2 class="section-title">Budget Tracker</h2>
+    <p class="section-sub">Out-of-pocket target: ~$2,250+ · Flights &amp; hotel covered by Flexera · one activity TBD</p>
+  </div>
+
+  <div class="budget-summary">
+    <div class="bdg-sum-item">
+      <div class="bdg-sum-lbl">Out-of-Pocket Budget</div>
+      <div class="bdg-sum-val" id="budget-total">$2,250</div>
+      <div class="bdg-sum-sub">est. + 1 activity TBD</div>
+    </div>
+    <div class="bdg-sep"></div>
+    <div class="bdg-sum-item">
+      <div class="bdg-sum-lbl">Spent So Far</div>
+      <div class="bdg-sum-val" id="budget-spent">—</div>
+      <div class="bdg-sum-sub">actual</div>
+    </div>
+    <div class="bdg-sep"></div>
+    <div class="bdg-sum-item">
+      <div class="bdg-sum-lbl">Remaining</div>
+      <div class="bdg-sum-val" id="budget-remaining">—</div>
+      <div class="bdg-sum-sub">to go</div>
+    </div>
+  </div>
+
+  <p class="budget-note">Tap the Actual field to log spend as you go. One activity (Golf or Catamaran — whichever is cheaper) is out of pocket: add it to the Mauritius row once prices are known.</p>
+
+  <!-- FLEXERA COVERED -->
+  <div class="bdg-section-lbl">✦ Covered by Flexera / President's Club</div>
+
+  <div class="bdg-row covered">
+    <div class="bdg-row-top">
+      <div>
+        <div class="bdg-cat">✈ All 4 Flights</div>
+        <div class="bdg-cat-note">AUS↔LHR (BA0190/BA0191) + LGW↔MRU (MK0053/BA2064)</div>
+      </div>
+      <div class="covered-badge">✓ Covered</div>
+    </div>
+  </div>
+
+  <div class="bdg-row covered">
+    <div class="bdg-row-top">
+      <div>
+        <div class="bdg-cat">🏨 One&Only Le Saint Géran</div>
+        <div class="bdg-cat-note">4 nights · May 18–22 · Belle Mare Peninsula</div>
+      </div>
+      <div class="covered-badge">✓ Covered</div>
+    </div>
+  </div>
+
+  <div class="bdg-row" data-est="0" style="border-color:#D4CC8A;background:#FDFBEE;">
+    <div class="bdg-row-top">
+      <div>
+        <div class="bdg-cat" style="color:var(--text);">⛳ Golf &amp; ⛵ Catamaran</div>
+        <div class="bdg-cat-note">Flexera covers the <em>more expensive</em> activity — the cheaper one is out of pocket for Marcus. Exact prices TBD once on the ground.</div>
+      </div>
+      <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;background:#FFF8D6;color:#7A5800;border:1px solid #F0CC6A;border-radius:100px;padding:0.18rem 0.6rem;white-space:nowrap;flex-shrink:0;">TBD</div>
+    </div>
+    <div style="font-size:0.74rem;color:#7A5800;background:#FFFBEC;border:1px solid #F0CC6A;border-radius:var(--r-sm);padding:0.6rem 0.8rem;line-height:1.5;">
+      ⚠ One activity covered by Flexera (most expensive). The cheaper one is an out-of-pocket cost for Marcus — add it to the Mauritius out-of-pocket row below once you know prices. Golf (Legend Course) is likely the pricier of the two.
+    </div>
+  </div>
+
+  <div class="bdg-row covered">
+    <div class="bdg-row-top">
+      <div>
+        <div class="bdg-cat">🍽 Hosted Meals &amp; Events</div>
+        <div class="bdg-cat-note">Welcome reception, group lunch (Tue), hosted dinners (Wed + Thu Awards)</div>
+      </div>
+      <div class="covered-badge">✓ Covered</div>
+    </div>
+  </div>
+
+  <div class="bdg-row covered">
+    <div class="bdg-row-top">
+      <div>
+        <div class="bdg-cat">🚗 Airport Transfers</div>
+        <div class="bdg-cat-note">MRU arrival May 18 + departure May 22</div>
+      </div>
+      <div class="covered-badge">✓ Covered</div>
+    </div>
+  </div>
+
+  <!-- OUT OF POCKET -->
+  <div class="bdg-section-lbl">💳 Your Out-of-Pocket</div>
+
+  <div class="bdg-row" data-est="500">
+    <div class="bdg-row-top">
+      <div>
+        <div class="bdg-cat">🏨 London Accommodation</div>
+        <div class="bdg-cat-note">Both layovers combined (2 nights out + 1 night return)</div>
+      </div>
+      <div class="bdg-amounts">
+        <div class="bdg-amt-wrap">
+          <div class="bdg-amt-lbl">Budget</div>
+          <div class="bdg-amt-val">$800</div>
+        </div>
+        <div class="bdg-amt-wrap">
+          <div class="bdg-amt-lbl">Actual</div>
+          <input class="bdg-actual-input" data-id="b-london-hotel" type="number" placeholder="—" min="0">
+        </div>
+      </div>
+    </div>
+    <div class="bdg-bar-track"><div class="bdg-bar-fill"></div></div>
+  </div>
+
+  <div class="bdg-row" data-est="700">
+    <div class="bdg-row-top">
+      <div>
+        <div class="bdg-cat">🍽 London Food, Transport &amp; Activities</div>
+        <div class="bdg-cat-note">Dishoom, Michelin dinners, tubes, Borough Market — both layovers</div>
+      </div>
+      <div class="bdg-amounts">
+        <div class="bdg-amt-wrap">
+          <div class="bdg-amt-lbl">Budget</div>
+          <div class="bdg-amt-val">$700</div>
+        </div>
+        <div class="bdg-amt-wrap">
+          <div class="bdg-amt-lbl">Actual</div>
+          <input class="bdg-actual-input" data-id="b-london-food" type="number" placeholder="—" min="0">
+        </div>
+      </div>
+    </div>
+    <div class="bdg-bar-track"><div class="bdg-bar-fill"></div></div>
+  </div>
+
+  <div class="bdg-row" data-est="750">
+    <div class="bdg-row-top">
+      <div>
+        <div class="bdg-cat">🌊 Mauritius Out-of-Pocket</div>
+        <div class="bdg-cat-note">Extra dining, drinks, tips, shopping, incidentals + cheaper activity (TBD)</div>
+      </div>
+      <div class="bdg-amounts">
+        <div class="bdg-amt-wrap">
+          <div class="bdg-amt-lbl">Budget</div>
+          <div class="bdg-amt-val">$750</div>
+        </div>
+        <div class="bdg-amt-wrap">
+          <div class="bdg-amt-lbl">Actual</div>
+          <input class="bdg-actual-input" data-id="b-mauritius-oop" type="number" placeholder="—" min="0">
+        </div>
+      </div>
+    </div>
+    <div class="bdg-bar-track"><div class="bdg-bar-fill"></div></div>
+  </div>
+
+  <div class="bdg-total">
+    <div class="bdg-total-lbl">Out-of-Pocket Total <span style="font-size:0.6rem;color:var(--sand-dark);font-weight:400;">(+ 1 activity TBD)</span></div>
+    <div class="bdg-total-vals">
+      <div class="bdg-total-amt">
+        <div class="bdg-amt-lbl">Budget</div>
+        <div class="bdg-amt-val">$2,250</div>
+      </div>
+      <div class="bdg-total-amt">
+        <div class="bdg-amt-lbl">Actual</div>
+        <div class="bdg-amt-val actual" id="budget-total-actual">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:1rem;">
+    💱 <strong>Currency:</strong> Mauritius Rupee (MUR). ~1 USD ≈ 45 MUR. Resort charges often in USD/EUR — large hotels and restaurants take Visa/Mastercard. Grab MUR at airport ATM on arrival for tips and local purchases. &nbsp;·&nbsp; <strong>London:</strong> Card-first city, contactless everywhere. Tap on/off on the Tube with your contactless card — no Oyster needed.
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ SCRIPT -->
+<script>
+  // ─── Tab switching ──────────────────────────────────────
+  function showTab(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('s-' + id).classList.add('active');
+    document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+    window.scrollTo({ top: document.querySelector('.nav').offsetTop - 1, behavior: 'smooth' });
+  }
+
+  // ─── Countdown ─────────────────────────────────────────
+  (function () {
+    const depart = new Date('2026-05-14T00:00:00');
+    const today  = new Date();
+    today.setHours(0, 0, 0, 0);
+    const diff = Math.ceil((depart - today) / (1000 * 60 * 60 * 24));
+    const el = document.getElementById('countdown');
+    if      (diff > 1)   el.innerHTML = '<span>' + diff + ' days</span> until departure';
+    else if (diff === 1)  el.innerHTML = '✈ <span>Tomorrow!</span> Pack tonight.';
+    else if (diff === 0)  el.innerHTML = '✈ <span>Today is the day!</span> Safe travels.';
+    else if (diff >= -10) el.innerHTML = '🌊 You are somewhere incredible <span>right now</span>.';
+    else                  el.innerHTML = '🌺 <span>What a trip.</span> Until the next one.';
+  })();
+
+  // ─── Day card expand / collapse ────────────────────────
+  document.querySelectorAll('.day-hd').forEach(hd => {
+    hd.addEventListener('click', () => hd.closest('.day-card').classList.toggle('open'));
+  });
+
+  // ─── Packing checkboxes ─────────────────────────────────
+  const TOTAL_PACK = 47;
+
+  const CAT_IDS = {
+    transit:  'cc-transit',
+    tech:     'cc-tech',
+    beach:    'cc-beach',
+    casual:   'cc-casual',
+    smart:    'cc-smart',
+    london:   'cc-london',
+    under:    'cc-under',
+    health:   'cc-health',
+    docs:     'cc-docs'
+  };
+
+  function packInit() {
+    document.querySelectorAll('.pack-item').forEach(item => {
+      const id = item.dataset.id;
+      if (localStorage.getItem('pack_' + id) === '1') {
+        item.classList.add('checked');
+        item.querySelector('.pack-cb').classList.add('checked');
+      }
+      item.addEventListener('click', () => {
+        const isChecked = item.classList.toggle('checked');
+        item.querySelector('.pack-cb').classList.toggle('checked', isChecked);
+        localStorage.setItem('pack_' + id, isChecked ? '1' : '0');
+        packUpdate();
+      });
+    });
+    packUpdate();
+  }
+
+  function packUpdate() {
+    const checked = document.querySelectorAll('.pack-item.checked').length;
+    document.getElementById('pack-count').textContent = checked + ' / ' + TOTAL_PACK + ' packed';
+    document.getElementById('pack-bar').style.width = (checked / TOTAL_PACK * 100).toFixed(1) + '%';
+
+    for (const [cat, elId] of Object.entries(CAT_IDS)) {
+      const list = document.querySelector('.pack-list[data-cat="' + cat + '"]');
+      if (!list) continue;
+      const total = list.querySelectorAll('.pack-item').length;
+      const done  = list.querySelectorAll('.pack-item.checked').length;
+      const el    = document.getElementById(elId);
+      if (el) el.textContent = done + ' / ' + total;
+    }
+  }
+
+  packInit();
+
+  // ─── Wishlist checkboxes ────────────────────────────────
+  function wishInit() {
+    document.querySelectorAll('.wish-card').forEach(card => {
+      const id = card.dataset.id;
+      if (localStorage.getItem('wish_' + id) === '1') {
+        card.classList.add('done');
+        card.querySelector('.wish-cb').classList.add('checked');
+      }
+      card.addEventListener('click', () => {
+        const isDone = card.classList.toggle('done');
+        card.querySelector('.wish-cb').classList.toggle('checked', isDone);
+        localStorage.setItem('wish_' + id, isDone ? '1' : '0');
+      });
+    });
+  }
+
+  wishInit();
+
+  // ─── Budget tracker ─────────────────────────────────────
+  function budgetInit() {
+    document.querySelectorAll('.bdg-actual-input').forEach(input => {
+      const id   = input.dataset.id;
+      const saved = localStorage.getItem(id);
+      if (saved !== null && saved !== '') {
+        input.value = saved;
+        updateBar(input.closest('.bdg-row'));
+      }
+      input.addEventListener('input', () => {
+        localStorage.setItem(id, input.value);
+        updateBar(input.closest('.bdg-row'));
+        updateSummary();
+      });
+      input.addEventListener('click', e => e.stopPropagation());
+    });
+    updateSummary();
+  }
+
+  function updateBar(row) {
+    const est    = parseFloat(row.dataset.est) || 0;
+    const actual = parseFloat(row.querySelector('.bdg-actual-input').value) || 0;
+    const fill   = row.querySelector('.bdg-bar-fill');
+    if (!est || !actual) { fill.style.width = '0%'; fill.classList.remove('over'); return; }
+    const pct = Math.min((actual / est) * 100, 100).toFixed(1);
+    fill.style.width = pct + '%';
+    fill.classList.toggle('over', actual > est);
+  }
+
+  function updateSummary() {
+    let totalBudget = 0, totalSpent = 0, anySpent = false;
+    document.querySelectorAll('.bdg-row:not(.covered)').forEach(row => {
+      totalBudget += parseFloat(row.dataset.est) || 0;
+      const v = parseFloat(row.querySelector('.bdg-actual-input').value);
+      if (!isNaN(v) && v > 0) { totalSpent += v; anySpent = true; }
+    });
+    const fmt = n => '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+    document.getElementById('budget-total').textContent           = fmt(totalBudget);
+    document.getElementById('budget-spent').textContent           = anySpent ? fmt(totalSpent) : '—';
+    document.getElementById('budget-remaining').textContent       = anySpent ? fmt(totalBudget - totalSpent) : '—';
+    document.getElementById('budget-total-actual').textContent    = anySpent ? fmt(totalSpent) : '—';
+  }
+
+  budgetInit();
+</script>
+</body>
+</html>
