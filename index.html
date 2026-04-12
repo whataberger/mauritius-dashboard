@@ -1206,6 +1206,206 @@
       line-height: 1.45;
     }
 
+    /* ─── LONDON STAY ─────────────────────────────────── */
+    .london-intro {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 0.85rem 1rem;
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .london-intro a {
+      color: var(--ocean-mid);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid var(--ocean-mid);
+    }
+
+    .london-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .london-card {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      position: relative;
+      box-shadow: 0 1px 8px var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .london-card.booked {
+      border-color: var(--ocean-mid);
+      background: linear-gradient(180deg, rgba(46,125,168,0.05) 0%, var(--white) 60%);
+    }
+
+    .london-booked-badge {
+      display: none;
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      background: var(--ocean-mid);
+      color: white;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      padding: 0.25rem 0.55rem;
+      border-radius: 100px;
+    }
+    .london-card.booked .london-booked-badge { display: inline-block; }
+
+    .london-hd {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding-right: 4.5rem;
+    }
+    .london-card:not(.booked) .london-hd { padding-right: 0; }
+
+    .london-eyebrow {
+      font-size: 0.56rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sand-dark);
+    }
+
+    .london-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ocean-deep);
+      margin-top: 0.1rem;
+    }
+
+    .london-view-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      background: var(--ocean-deep);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 0.85rem;
+      border-radius: var(--r-sm);
+      text-decoration: none;
+      transition: background 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .london-view-btn:hover { background: var(--ocean); }
+
+    .london-voters {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding: 0.6rem 0.7rem;
+      background: var(--bg-alt);
+      border-radius: var(--r-sm);
+    }
+
+    .london-voter-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .london-voter-name {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-mid);
+    }
+
+    .london-vote-btns { display: flex; gap: 0.35rem; }
+
+    .london-vote-btn {
+      width: 32px;
+      height: 28px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: var(--r-sm);
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      -webkit-tap-highlight-color: transparent;
+      padding: 0;
+      line-height: 1;
+    }
+    .london-vote-btn:hover { border-color: var(--ocean-mid); }
+    .london-vote-btn.up.active {
+      background: #d6f0dc;
+      border-color: #3fa35b;
+    }
+    .london-vote-btn.down.active {
+      background: #f8d7d2;
+      border-color: var(--coral);
+    }
+
+    .london-notes {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 0.55rem 0.65rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      color: var(--text);
+      resize: vertical;
+      min-height: 52px;
+      background: white;
+      line-height: 1.45;
+    }
+    .london-notes:focus { outline: none; border-color: var(--ocean-mid); }
+
+    .london-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .london-book-toggle {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text-mid);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.7rem;
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      transition: all 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .london-book-toggle:hover { border-color: var(--ocean-mid); color: var(--ocean-mid); }
+    .london-card.booked .london-book-toggle {
+      background: var(--ocean-mid);
+      border-color: var(--ocean-mid);
+      color: white;
+    }
+
+    .london-save-status {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      min-height: 0.9rem;
+    }
+
     /* ─── BUDGET ─────────────────────────────────────────── */
     .budget-summary {
       background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean) 100%);
@@ -1736,6 +1936,7 @@
 
     @media (max-width: 380px) {
       .wish-grid { grid-template-columns: 1fr; }
+      .london-grid { grid-template-columns: 1fr; }
       .hero-title { font-size: 2.4rem; }
       .bdg-amounts { gap: 0.75rem; }
       .journal-grid { grid-template-columns: 1fr; }
@@ -1827,6 +2028,9 @@
     </button>
     <button class="nav-tab" data-tab="wishlist" onclick="showTab('wishlist')">
       <span class="ti">⭐</span>Wishlist
+    </button>
+    <button class="nav-tab" data-tab="london" onclick="showTab('london')">
+      <span class="ti">🏠</span>London Stay
     </button>
     <button class="nav-tab" data-tab="budget" onclick="showTab('budget')">
       <span class="ti">💰</span>Budget
@@ -2928,6 +3132,23 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════ LONDON STAY -->
+<section id="s-london" class="section">
+  <div class="section-header">
+    <div class="section-eyebrow">London · May 15–17</div>
+    <h2 class="section-title">London Stay · Voting Board</h2>
+    <p class="section-sub">Review Airbnbs for the layover — thumbs up/down, leave notes, mark the winner.</p>
+  </div>
+
+  <div class="london-intro">
+    Shortlisted from the shared wishlist. Open each listing on Airbnb, vote independently, and leave notes so we can compare. Votes + notes sync across devices so we both see the same board.
+    <br><br>
+    Full wishlist: <a href="https://www.airbnb.com/wishlists/viewonly/e3e68444-8a29-4306-b392-d6b825067d4c?s=67&unique_share_id=c000b0cb-5dfe-4fde-9421-e16075a45dd2" target="_blank" rel="noopener">View all on Airbnb ↗</a>
+  </div>
+
+  <div class="london-grid" id="londonGrid"></div>
+</section>
+
 <!-- ══════════════════════════════════════════════ BUDGET -->
 <section id="s-budget" class="section">
   <div class="section-header">
@@ -3417,7 +3638,19 @@
   const CURRENCY_URL = 'https://api.exchangerate-api.com/v4/latest/USD';
 
   // ─── In-memory bin cache ─────────────────────────────────
-  let binData = { notes: {}, photos: {} };
+  let binData = { notes: {}, photos: {}, londonVotes: {} };
+
+  // ─── London listings ────────────────────────────────────
+  const LONDON_LISTINGS = [
+    { id: '1', url: 'https://www.airbnb.com/rooms/42323835' },
+    { id: '2', url: 'https://www.airbnb.com/rooms/1661734393102365737' },
+    { id: '3', url: 'https://www.airbnb.com/rooms/1644227555898423498' },
+    { id: '4', url: 'https://www.airbnb.com/rooms/1584090579034258057' },
+    { id: '5', url: 'https://www.airbnb.com/rooms/1100070286781571080' },
+    { id: '6', url: 'https://www.airbnb.com/rooms/1583486622327445670' },
+    { id: '7', url: 'https://www.airbnb.com/rooms/1568208419550676430' },
+    { id: '8', url: 'https://www.airbnb.com/rooms/1638992776038402864' }
+  ];
   let offlineMode = localStorage.getItem('offlineMode') === '1';
 
   // ─── Tab switching ───────────────────────────────────────
@@ -3590,6 +3823,7 @@
       }
       notesInit();
       journalInit();
+      londonRender();
       return;
     }
     try {
@@ -3601,7 +3835,8 @@
         const rec  = json.record || {};
         binData = {
           notes:  rec.notes  || {},
-          photos: rec.photos || {}
+          photos: rec.photos || {},
+          londonVotes: rec.londonVotes || {}
         };
         localStorage.setItem('binData_cache', JSON.stringify(binData));
       } else {
@@ -3614,6 +3849,7 @@
     }
     notesInit();
     journalInit();
+    londonRender();
   }
 
   // ─── JSONBin: save bin data ──────────────────────────────
@@ -3837,6 +4073,122 @@
     }
   }
 
+  // ─── London Stay voting board ────────────────────────────
+  const londonNoteTimers = {};
+
+  function getLondonEntry(id) {
+    binData.londonVotes = binData.londonVotes || {};
+    if (!binData.londonVotes[id]) {
+      binData.londonVotes[id] = { marcus: null, gabby: null, notes: '', booked: false };
+    }
+    return binData.londonVotes[id];
+  }
+
+  function londonRender() {
+    const grid = document.getElementById('londonGrid');
+    if (!grid) return;
+    grid.innerHTML = LONDON_LISTINGS.map((l, i) => {
+      const entry = getLondonEntry(l.id);
+      const num = i + 1;
+      return `
+        <div class="london-card${entry.booked ? ' booked' : ''}" data-id="${l.id}">
+          <span class="london-booked-badge">BOOKED</span>
+          <div class="london-hd">
+            <div>
+              <div class="london-eyebrow">Listing ${num}</div>
+              <div class="london-title">Listing ${num}</div>
+            </div>
+          </div>
+          <a class="london-view-btn" href="${l.url}" target="_blank" rel="noopener">View Listing ↗</a>
+          <div class="london-voters">
+            <div class="london-voter-row">
+              <span class="london-voter-name">Marcus</span>
+              <div class="london-vote-btns">
+                <button type="button" class="london-vote-btn up${entry.marcus === 'up' ? ' active' : ''}" data-voter="marcus" data-vote="up" aria-label="Marcus thumbs up">👍</button>
+                <button type="button" class="london-vote-btn down${entry.marcus === 'down' ? ' active' : ''}" data-voter="marcus" data-vote="down" aria-label="Marcus thumbs down">👎</button>
+              </div>
+            </div>
+            <div class="london-voter-row">
+              <span class="london-voter-name">Gabby</span>
+              <div class="london-vote-btns">
+                <button type="button" class="london-vote-btn up${entry.gabby === 'up' ? ' active' : ''}" data-voter="gabby" data-vote="up" aria-label="Gabby thumbs up">👍</button>
+                <button type="button" class="london-vote-btn down${entry.gabby === 'down' ? ' active' : ''}" data-voter="gabby" data-vote="down" aria-label="Gabby thumbs down">👎</button>
+              </div>
+            </div>
+          </div>
+          <textarea class="london-notes" data-id="${l.id}" placeholder="Notes — pros, cons, questions…">${escapeHtml(entry.notes || '')}</textarea>
+          <div class="london-footer">
+            <button type="button" class="london-book-toggle" data-action="book">${entry.booked ? '✓ Booked' : 'Mark as Booked'}</button>
+            <span class="london-save-status" id="ln-status-${l.id}"></span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    grid.querySelectorAll('.london-vote-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.london-card');
+        const id = card.dataset.id;
+        const voter = btn.dataset.voter;
+        const vote = btn.dataset.vote;
+        const entry = getLondonEntry(id);
+        entry[voter] = (entry[voter] === vote) ? null : vote;
+        card.querySelectorAll('.london-vote-btn[data-voter="' + voter + '"]').forEach(b => {
+          b.classList.toggle('active', entry[voter] === b.dataset.vote);
+        });
+        londonSave(id);
+      });
+    });
+
+    grid.querySelectorAll('.london-notes').forEach(ta => {
+      const id = ta.dataset.id;
+      ta.addEventListener('input', () => {
+        const entry = getLondonEntry(id);
+        entry.notes = ta.value;
+        setLondonStatus(id, 'typing');
+        clearTimeout(londonNoteTimers[id]);
+        londonNoteTimers[id] = setTimeout(() => londonSave(id), 800);
+      });
+    });
+
+    grid.querySelectorAll('.london-book-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.london-card');
+        const id = card.dataset.id;
+        const entry = getLondonEntry(id);
+        entry.booked = !entry.booked;
+        card.classList.toggle('booked', entry.booked);
+        btn.textContent = entry.booked ? '✓ Booked' : 'Mark as Booked';
+        londonSave(id);
+      });
+    });
+  }
+
+  function setLondonStatus(id, state) {
+    const el = document.getElementById('ln-status-' + id);
+    if (!el) return;
+    if (state === 'typing') el.textContent = '';
+    if (state === 'saving') el.textContent = 'Saving…';
+    if (state === 'saved')  el.textContent = 'Saved ✓';
+    if (state === 'local')  el.textContent = 'Saved locally';
+  }
+
+  async function londonSave(id) {
+    setLondonStatus(id, 'saving');
+    const ok = await saveBinData();
+    setLondonStatus(id, ok ? 'saved' : 'local');
+    setTimeout(() => setLondonStatus(id, ''), 2500);
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   // ─── Wishlist checkboxes ─────────────────────────────────
   function wishInit() {
     document.querySelectorAll('.wish-card').forEach(card => {
@@ -3903,6 +4255,7 @@
     packInit();
     wishInit();
     budgetInit();
+    londonRender();
     loadBinData();
     fetchWeather();
     fetchCurrency();
