@@ -1206,204 +1206,69 @@
       line-height: 1.45;
     }
 
-    /* ─── LONDON STAY ─────────────────────────────────── */
-    .london-intro {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: var(--r-sm);
-      padding: 0.85rem 1rem;
-      font-size: 0.78rem;
-      color: var(--text-mid);
-      line-height: 1.5;
-      margin-bottom: 1.25rem;
-    }
-    .london-intro a {
-      color: var(--ocean-mid);
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px solid var(--ocean-mid);
-    }
-
-    .london-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.9rem;
-    }
-
-    .london-card {
-      background: var(--white);
-      border-radius: var(--r);
-      border: 1px solid var(--border);
-      padding: 1rem;
-      position: relative;
-      box-shadow: 0 1px 8px var(--shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-    }
-
-    .london-card.booked {
-      border-color: var(--ocean-mid);
-      background: linear-gradient(180deg, rgba(46,125,168,0.05) 0%, var(--white) 60%);
-    }
-
-    .london-booked-badge {
-      display: none;
-      position: absolute;
-      top: 0.7rem;
-      right: 0.7rem;
-      background: var(--ocean-mid);
-      color: white;
-      font-size: 0.55rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      padding: 0.25rem 0.55rem;
-      border-radius: 100px;
-    }
-    .london-card.booked .london-booked-badge { display: inline-block; }
-
-    .london-hd {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 0.5rem;
-      padding-right: 4.5rem;
-    }
-    .london-card:not(.booked) .london-hd { padding-right: 0; }
-
-    .london-eyebrow {
-      font-size: 0.56rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sand-dark);
-    }
-
-    .london-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--ocean-deep);
-      margin-top: 0.1rem;
-    }
-
-    .london-view-btn {
+    /* ─── RETURN STAY BOOKING ──────────────────────────── */
+    .book-now-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
+      gap: 0.3rem;
       background: var(--ocean-deep);
       color: white;
       font-family: 'Outfit', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 500;
       letter-spacing: 0.04em;
-      padding: 0.55rem 0.85rem;
+      padding: 0.4rem 0.7rem;
       border-radius: var(--r-sm);
       text-decoration: none;
+      margin-top: 0.45rem;
       transition: background 0.15s;
       -webkit-tap-highlight-color: transparent;
     }
-    .london-view-btn:hover { background: var(--ocean); }
+    .book-now-btn:hover { background: var(--ocean); }
 
-    .london-voters {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      padding: 0.6rem 0.7rem;
-      background: var(--bg-alt);
+    .return-stay-block.booked {
+      background: #F0FAF3;
+      border: 1px solid #A8D9B8;
       border-radius: var(--r-sm);
+      padding: 0.5rem 0.75rem;
+      transition: all 0.2s;
     }
 
-    .london-voter-row {
+    .return-booked-wrap {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
+      gap: 0.75rem;
+      margin-top: 0.9rem;
+      padding-top: 0.9rem;
+      border-top: 1px dashed var(--border);
     }
 
-    .london-voter-name {
+    .return-booked-btn {
+      border: 1.5px solid var(--border);
+      background: white;
+      color: var(--text-mid);
+      font-family: 'Outfit', sans-serif;
       font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--text-mid);
-    }
-
-    .london-vote-btns { display: flex; gap: 0.35rem; }
-
-    .london-vote-btn {
-      width: 32px;
-      height: 28px;
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: var(--r-sm);
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.15s;
-      -webkit-tap-highlight-color: transparent;
-      padding: 0;
-      line-height: 1;
-    }
-    .london-vote-btn:hover { border-color: var(--ocean-mid); }
-    .london-vote-btn.up.active {
-      background: #d6f0dc;
-      border-color: #3fa35b;
-    }
-    .london-vote-btn.down.active {
-      background: #f8d7d2;
-      border-color: var(--coral);
-    }
-
-    .london-notes {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: var(--r-sm);
-      padding: 0.55rem 0.65rem;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.75rem;
-      color: var(--text);
-      resize: vertical;
-      min-height: 52px;
-      background: white;
-      line-height: 1.45;
-    }
-    .london-notes:focus { outline: none; border-color: var(--ocean-mid); }
-
-    .london-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-
-    .london-book-toggle {
-      border: 1px solid var(--border);
-      background: white;
-      color: var(--text-mid);
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.65rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.4rem 0.7rem;
+      padding: 0.55rem 1rem;
       border-radius: var(--r-sm);
       cursor: pointer;
       transition: all 0.15s;
       -webkit-tap-highlight-color: transparent;
     }
-    .london-book-toggle:hover { border-color: var(--ocean-mid); color: var(--ocean-mid); }
-    .london-card.booked .london-book-toggle {
-      background: var(--ocean-mid);
-      border-color: var(--ocean-mid);
+    .return-booked-btn:hover { border-color: #3fa35b; color: #1F6B3A; }
+    .return-booked-btn.is-booked {
+      background: #1F6B3A;
+      border-color: #1F6B3A;
       color: white;
     }
 
-    .london-save-status {
-      font-size: 0.62rem;
+    .return-booked-hint {
+      font-size: 0.66rem;
       color: var(--text-muted);
-      min-height: 0.9rem;
     }
 
     /* ─── BUDGET ─────────────────────────────────────────── */
@@ -1936,7 +1801,6 @@
 
     @media (max-width: 380px) {
       .wish-grid { grid-template-columns: 1fr; }
-      .london-grid { grid-template-columns: 1fr; }
       .hero-title { font-size: 2.4rem; }
       .bdg-amounts { gap: 0.75rem; }
       .journal-grid { grid-template-columns: 1fr; }
@@ -2028,9 +1892,6 @@
     </button>
     <button class="nav-tab" data-tab="wishlist" onclick="showTab('wishlist')">
       <span class="ti">⭐</span>Wishlist
-    </button>
-    <button class="nav-tab" data-tab="london" onclick="showTab('london')">
-      <span class="ti">🏠</span>London Stay
     </button>
     <button class="nav-tab" data-tab="budget" onclick="showTab('budget')">
       <span class="ti">💰</span>Budget
@@ -2348,7 +2209,7 @@
         <div class="time-content">
           <div class="time-title">Arrive LHR T5 at 9:15 AM</div>
           <div class="time-desc">Immigration, collect bags, hop the Heathrow Express to Paddington (~15 min, ~£37). Check into hotel. Freshen up.</div>
-          <div class="todo-row">⚠️ <strong>Hotel not booked yet</strong> — need 1 night (or 2-night stay if combining with Sat). Recommended area: Notting Hill or King's Cross. See suggestions below.</div>
+          <div class="confirmed-row">✓ <strong>Hotel booked</strong> — Hotel Indigo London K West, Shepherd's Bush (2 nights, May 15–17). Details in the Stay row below.</div>
         </div>
       </div>
       <div class="time-row">
@@ -2374,32 +2235,19 @@
       <div class="time-row">
         <div class="time-lbl">Stay</div>
         <div class="time-content">
-          <div class="time-title">Where to stay — Outbound Layover</div>
-          <div class="hotel-rec-block">
-            <div class="hotel-rec-title">🏨 Outbound: 2 nights (Fri May 15 – Sun May 17)</div>
-            <div class="hotel-rec-desc">You're having dinner at Dishoom King's Cross (Fri) and The Ledbury in Notting Hill (Sat). Best areas:</div>
-            <div class="hotel-rec-area">⭐ Notting Hill / Bayswater — Top Pick</div>
-            <div class="hotel-rec-desc">Walking distance to The Ledbury Sat night. Easy tube to King's Cross Fri (~30 min Victoria line). Georgian streets, great neighbourhood feel. Perfect for an Airbnb.</div>
-            <div class="hotel-option">
-              <div class="hotel-option-name"><strong>The Laslett</strong> — 8 Pembridge Gardens, Notting Hill. Stylish boutique hotel, walking distance to The Ledbury.</div>
-              <div class="hotel-option-price">~$250–350/nt</div>
-            </div>
-            <div class="hotel-option">
-              <div class="hotel-option-name"><strong>Airbnb</strong> — Notting Hill garden flat or mews house. Search "Notting Hill entire flat, 2 nights May 15–17".</div>
-              <div class="hotel-option-price">~$200–300/nt</div>
-            </div>
-            <div class="hotel-rec-area">King's Cross / Islington</div>
-            <div class="hotel-rec-desc">Right next to Dishoom Friday. Excellent transport links. Less charm than Notting Hill but very convenient.</div>
-            <div class="hotel-option">
-              <div class="hotel-option-name"><strong>The Standard London</strong> — 10 Argyle Street, King's Cross. Cool design hotel steps from Dishoom.</div>
-              <div class="hotel-option-price">~$200–300/nt</div>
-            </div>
-            <div class="hotel-rec-area">Marylebone / Fitzrovia</div>
-            <div class="hotel-rec-desc">Dead centre. ~20 min to both dinners. Stylish, walkable, great cafés.</div>
-            <div class="hotel-option">
-              <div class="hotel-option-name"><strong>Airbnb</strong> — Marylebone or Fitzrovia apartment. Good central fallback.</div>
-              <div class="hotel-option-price">~$180–260/nt</div>
-            </div>
+          <div class="time-title">Stay — Booked ✓ <span class="confirmed-badge">✓ Confirmed</span></div>
+          <div class="confirmed-row">
+            🏨 <strong>Hotel Indigo London K West, Shepherd's Bush</strong> (IHG)<br>
+            Richmond Way, London, W14 0AX<br>
+            <span style="font-size:0.72rem;opacity:0.85;">
+              Check-in: <strong>Fri May 15, 3:00 PM</strong> &nbsp;·&nbsp; Check-out: <strong>Sun May 17, 11:00 AM</strong><br>
+              Room: Standard Room, 1 Queen Bed<br>
+              Total: <strong>$457.71</strong> (2 nights, taxes &amp; fees incl., non-refundable)<br>
+              Confirmation #: <strong>2436501378</strong>
+            </span>
+          </div>
+          <div class="hotel-rec-desc" style="margin-top:0.6rem;">
+            📍 <strong>Great location</strong> — Shepherd's Bush is walking distance (or a short Uber) to The Ledbury in Notting Hill, and an easy Central-line tube ride to King's Cross for Dishoom.
           </div>
         </div>
       </div>
@@ -2798,29 +2646,39 @@
       <div class="time-row">
         <div class="time-lbl">Stay</div>
         <div class="time-content">
-          <div class="time-title">Where to stay — Return Layover</div>
-          <div class="hotel-rec-block">
+          <div class="time-title">Where to stay — Return Layover <span class="todo-badge">⚠ Needs Booking</span></div>
+          <div class="hotel-rec-block return-stay-block" id="returnStayBlock">
             <div class="hotel-rec-title">🏨 Return: 1 night (Sat May 23 – Sun May 24)</div>
-            <div class="hotel-rec-desc">Arriving LGW 6am, departing LHR T5 11:10am Sunday — central or west London is best for easy Heathrow access.</div>
-            <div class="hotel-rec-area">⭐ Kensington / Earl's Court — Top Pick</div>
-            <div class="hotel-rec-desc">15 min from Heathrow on the Piccadilly line. Nice area, walkable, low stress Sunday morning.</div>
+            <div class="todo-row">⚠️ <strong>Important</strong> — arriving Gatwick 6:00 AM Sat May 23, departing Heathrow T5 11:10 AM Sun May 24. Allow 60–90 min for cross-London transfer Sunday morning.</div>
+
+            <div class="hotel-rec-area">Option 1 · citizenM London Shoreditch</div>
+            <div class="hotel-rec-desc">Stylish, affordable, strong reviews. Compact rooms done well; good transport links across the city.</div>
             <div class="hotel-option">
-              <div class="hotel-option-name"><strong>Any well-rated Kensington hotel</strong> — Copthorne Tara, NH London Kensington, or similar.</div>
-              <div class="hotel-option-price">~$150–220/nt</div>
+              <div class="hotel-option-name"><strong>citizenM London Shoreditch</strong> — 6 Holywell Lane, London EC2A 3ET.</div>
+              <div class="hotel-option-price">~$150–180/nt</div>
+              <a class="book-now-btn" href="https://www.citizenm.com/hotels/europe/london/london-shoreditch-hotel" target="_blank" rel="noopener">Book Now ↗</a>
             </div>
-            <div class="hotel-rec-area">Paddington — Most Practical</div>
-            <div class="hotel-rec-desc">Heathrow Express from Paddington to LHR T5 is 15 min, £37. Zero stress for the Sunday morning flight.</div>
+
+            <div class="hotel-rec-area">Option 2 · Paddington 4-star — Most Practical</div>
+            <div class="hotel-rec-desc">Heathrow Express from Paddington → LHR T5 in ~15 min (£25). Supremely practical for the Sunday morning flight.</div>
             <div class="hotel-option">
-              <div class="hotel-option-name"><strong>Any 4-star Paddington hotel</strong> — Hilton London Paddington, Park Grand, or similar.</div>
+              <div class="hotel-option-name"><strong>Any well-rated 4-star Paddington hotel</strong> — e.g. Hilton London Paddington, Park Grand, similar.</div>
               <div class="hotel-option-price">~$150–200/nt</div>
+              <a class="book-now-btn" href="https://www.booking.com/searchresults.html?ss=Paddington%2C+London&checkin=2026-05-23&checkout=2026-05-24&nflt=class%3D4" target="_blank" rel="noopener">Book Now ↗</a>
             </div>
-            <div class="hotel-rec-area">Budget / Design Option</div>
+
+            <div class="hotel-rec-area">Option 3 · Shepherd's Bush / Notting Hill</div>
+            <div class="hotel-rec-desc">Familiar area (same as outbound). Still easy Heathrow access via the Piccadilly line (~45 min).</div>
             <div class="hotel-option">
-              <div class="hotel-option-name"><strong>citizenM Shoreditch or Southwark</strong> — affordable, stylish, compact. Good transport links.</div>
-              <div class="hotel-option-price">~$130–180/nt</div>
+              <div class="hotel-option-name"><strong>Shepherd's Bush or Notting Hill hotel</strong> — same neighbourhood as Hotel Indigo K West, stay in a known area.</div>
+              <div class="hotel-option-price">~$150–250/nt</div>
+              <a class="book-now-btn" href="https://www.booking.com/searchresults.html?ss=Shepherd%27s+Bush%2C+London&checkin=2026-05-23&checkout=2026-05-24" target="_blank" rel="noopener">Book Now ↗</a>
             </div>
-            <div class="hotel-rec-area">Same Notting Hill hotel as outbound?</div>
-            <div class="hotel-rec-desc">Simplifies logistics if you already have a good relationship with the property. Still easy Heathrow access via Tube.</div>
+
+            <div class="return-booked-wrap">
+              <button type="button" class="return-booked-btn" id="returnBookedBtn">Mark as Booked</button>
+              <span class="return-booked-hint" id="returnBookedHint">Click once the hotel is confirmed — syncs to Gabby</span>
+            </div>
           </div>
         </div>
       </div>
@@ -3143,23 +3001,6 @@
       <div class="wish-desc" style="margin-top:0.4rem;font-size:0.72rem;opacity:0.7;">Abbot Street Car Park, Dalston E8 3DP · Nearest tube: Dalston Kingsland</div>
     </div>
   </div>
-</section>
-
-<!-- ═══════════════════════════════════════ LONDON STAY -->
-<section id="s-london" class="section">
-  <div class="section-header">
-    <div class="section-eyebrow">London · May 15–17</div>
-    <h2 class="section-title">London Stay · Voting Board</h2>
-    <p class="section-sub">Review Airbnbs for the layover — thumbs up/down, leave notes, mark the winner.</p>
-  </div>
-
-  <div class="london-intro">
-    Shortlisted from the shared wishlist. Open each listing on Airbnb, vote independently, and leave notes so we can compare. Votes + notes sync across devices so we both see the same board.
-    <br><br>
-    Full wishlist: <a href="https://www.airbnb.com/wishlists/viewonly/e3e68444-8a29-4306-b392-d6b825067d4c?s=67&unique_share_id=c000b0cb-5dfe-4fde-9421-e16075a45dd2" target="_blank" rel="noopener">View all on Airbnb ↗</a>
-  </div>
-
-  <div class="london-grid" id="londonGrid"></div>
 </section>
 
 <!-- ══════════════════════════════════════════════ BUDGET -->
@@ -3651,19 +3492,7 @@
   const CURRENCY_URL = 'https://api.exchangerate-api.com/v4/latest/USD';
 
   // ─── In-memory bin cache ─────────────────────────────────
-  let binData = { notes: {}, photos: {}, londonVotes: {} };
-
-  // ─── London listings ────────────────────────────────────
-  const LONDON_LISTINGS = [
-    { id: '1', url: 'https://www.airbnb.com/rooms/42323835' },
-    { id: '2', url: 'https://www.airbnb.com/rooms/1661734393102365737' },
-    { id: '3', url: 'https://www.airbnb.com/rooms/1644227555898423498' },
-    { id: '4', url: 'https://www.airbnb.com/rooms/1584090579034258057' },
-    { id: '5', url: 'https://www.airbnb.com/rooms/1100070286781571080' },
-    { id: '6', url: 'https://www.airbnb.com/rooms/1583486622327445670' },
-    { id: '7', url: 'https://www.airbnb.com/rooms/1568208419550676430' },
-    { id: '8', url: 'https://www.airbnb.com/rooms/1638992776038402864' }
-  ];
+  let binData = { notes: {}, photos: {}, returnStay: { booked: false } };
   let offlineMode = localStorage.getItem('offlineMode') === '1';
 
   // ─── Tab switching ───────────────────────────────────────
@@ -3836,7 +3665,7 @@
       }
       notesInit();
       journalInit();
-      londonRender();
+      returnStayInit();
       return;
     }
     try {
@@ -3849,7 +3678,7 @@
         binData = {
           notes:  rec.notes  || {},
           photos: rec.photos || {},
-          londonVotes: rec.londonVotes || {}
+          returnStay: rec.returnStay || { booked: false }
         };
         localStorage.setItem('binData_cache', JSON.stringify(binData));
       } else {
@@ -3862,7 +3691,7 @@
     }
     notesInit();
     journalInit();
-    londonRender();
+    returnStayInit();
   }
 
   // ─── JSONBin: save bin data ──────────────────────────────
@@ -4086,120 +3915,33 @@
     }
   }
 
-  // ─── London Stay voting board ────────────────────────────
-  const londonNoteTimers = {};
+  // ─── Return-stay BOOKED toggle (JSONBin-synced) ─────────
+  function returnStayInit() {
+    const btn = document.getElementById('returnBookedBtn');
+    if (!btn) return;
+    const block = document.getElementById('returnStayBlock');
+    const hint = document.getElementById('returnBookedHint');
 
-  function getLondonEntry(id) {
-    binData.londonVotes = binData.londonVotes || {};
-    if (!binData.londonVotes[id]) {
-      binData.londonVotes[id] = { marcus: null, gabby: null, notes: '', booked: false };
-    }
-    return binData.londonVotes[id];
-  }
+    const applyState = () => {
+      const booked = !!(binData.returnStay && binData.returnStay.booked);
+      btn.classList.toggle('is-booked', booked);
+      btn.textContent = booked ? '✓ Booked — synced' : 'Mark as Booked';
+      if (block) block.classList.toggle('booked', booked);
+      if (hint) hint.textContent = booked ? 'Synced across devices' : 'Click once the hotel is confirmed — syncs to Gabby';
+    };
+    applyState();
 
-  function londonRender() {
-    const grid = document.getElementById('londonGrid');
-    if (!grid) return;
-    grid.innerHTML = LONDON_LISTINGS.map((l, i) => {
-      const entry = getLondonEntry(l.id);
-      const num = i + 1;
-      return `
-        <div class="london-card${entry.booked ? ' booked' : ''}" data-id="${l.id}">
-          <span class="london-booked-badge">BOOKED</span>
-          <div class="london-hd">
-            <div>
-              <div class="london-eyebrow">Listing ${num}</div>
-              <div class="london-title">Listing ${num}</div>
-            </div>
-          </div>
-          <a class="london-view-btn" href="${l.url}" target="_blank" rel="noopener">View Listing ↗</a>
-          <div class="london-voters">
-            <div class="london-voter-row">
-              <span class="london-voter-name">Marcus</span>
-              <div class="london-vote-btns">
-                <button type="button" class="london-vote-btn up${entry.marcus === 'up' ? ' active' : ''}" data-voter="marcus" data-vote="up" aria-label="Marcus thumbs up">👍</button>
-                <button type="button" class="london-vote-btn down${entry.marcus === 'down' ? ' active' : ''}" data-voter="marcus" data-vote="down" aria-label="Marcus thumbs down">👎</button>
-              </div>
-            </div>
-            <div class="london-voter-row">
-              <span class="london-voter-name">Gabby</span>
-              <div class="london-vote-btns">
-                <button type="button" class="london-vote-btn up${entry.gabby === 'up' ? ' active' : ''}" data-voter="gabby" data-vote="up" aria-label="Gabby thumbs up">👍</button>
-                <button type="button" class="london-vote-btn down${entry.gabby === 'down' ? ' active' : ''}" data-voter="gabby" data-vote="down" aria-label="Gabby thumbs down">👎</button>
-              </div>
-            </div>
-          </div>
-          <textarea class="london-notes" data-id="${l.id}" placeholder="Notes — pros, cons, questions…">${escapeHtml(entry.notes || '')}</textarea>
-          <div class="london-footer">
-            <button type="button" class="london-book-toggle" data-action="book">${entry.booked ? '✓ Booked' : 'Mark as Booked'}</button>
-            <span class="london-save-status" id="ln-status-${l.id}"></span>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    grid.querySelectorAll('.london-vote-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const card = btn.closest('.london-card');
-        const id = card.dataset.id;
-        const voter = btn.dataset.voter;
-        const vote = btn.dataset.vote;
-        const entry = getLondonEntry(id);
-        entry[voter] = (entry[voter] === vote) ? null : vote;
-        card.querySelectorAll('.london-vote-btn[data-voter="' + voter + '"]').forEach(b => {
-          b.classList.toggle('active', entry[voter] === b.dataset.vote);
-        });
-        londonSave(id);
-      });
+    if (btn.dataset.bound === '1') return;
+    btn.dataset.bound = '1';
+    btn.addEventListener('click', async () => {
+      binData.returnStay = binData.returnStay || { booked: false };
+      binData.returnStay.booked = !binData.returnStay.booked;
+      applyState();
+      if (hint) hint.textContent = 'Saving…';
+      const ok = await saveBinData();
+      if (hint) hint.textContent = ok ? 'Saved ✓ synced' : 'Saved locally (offline)';
+      setTimeout(applyState, 1800);
     });
-
-    grid.querySelectorAll('.london-notes').forEach(ta => {
-      const id = ta.dataset.id;
-      ta.addEventListener('input', () => {
-        const entry = getLondonEntry(id);
-        entry.notes = ta.value;
-        setLondonStatus(id, 'typing');
-        clearTimeout(londonNoteTimers[id]);
-        londonNoteTimers[id] = setTimeout(() => londonSave(id), 800);
-      });
-    });
-
-    grid.querySelectorAll('.london-book-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const card = btn.closest('.london-card');
-        const id = card.dataset.id;
-        const entry = getLondonEntry(id);
-        entry.booked = !entry.booked;
-        card.classList.toggle('booked', entry.booked);
-        btn.textContent = entry.booked ? '✓ Booked' : 'Mark as Booked';
-        londonSave(id);
-      });
-    });
-  }
-
-  function setLondonStatus(id, state) {
-    const el = document.getElementById('ln-status-' + id);
-    if (!el) return;
-    if (state === 'typing') el.textContent = '';
-    if (state === 'saving') el.textContent = 'Saving…';
-    if (state === 'saved')  el.textContent = 'Saved ✓';
-    if (state === 'local')  el.textContent = 'Saved locally';
-  }
-
-  async function londonSave(id) {
-    setLondonStatus(id, 'saving');
-    const ok = await saveBinData();
-    setLondonStatus(id, ok ? 'saved' : 'local');
-    setTimeout(() => setLondonStatus(id, ''), 2500);
-  }
-
-  function escapeHtml(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
   }
 
   // ─── Wishlist checkboxes ─────────────────────────────────
@@ -4268,7 +4010,7 @@
     packInit();
     wishInit();
     budgetInit();
-    londonRender();
+    returnStayInit();
     loadBinData();
     fetchWeather();
     fetchCurrency();
